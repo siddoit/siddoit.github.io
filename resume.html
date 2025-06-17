@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sidharth Sajith - Resume</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@500;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* --- Base Setup & Variables --- */
+        :root {
+            --bg-color: #1a1f26;
+            --text-color: #e0e0e0;
+            --accent-color: #00c6d7;
+            --secondary-text-color: #a0a0a0;
+            --icon-bg-color: #004d5d;
+            --bar-bg-color: #3e4c5a;
+            --container-bg: #1a1f26; /* Same as body for seamless feel */
+            --font-main: 'Lato', sans-serif;
+            --font-heading: 'Montserrat', sans-serif;
+        }
+
+        .light-mode {
+            --bg-color: #f4f4f5;
+            --text-color: #1c1917;
+            --accent-color: #007bff;
+            --secondary-text-color: #57534e;
+            --icon-bg-color: #e0e7ff;
+            --bar-bg-color: #d1d5db;
+            --container-bg: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-main);
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-size: 14px;
+            line-height: 1.7;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        
+        /* --- THEME SWITCHER --- */
+        .theme-switcher {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 100;
+        }
+        .theme-switch-label {
+            display: inline-flex;
+            align-items: center;
+            cursor: pointer;
+        }
+        .theme-switch-checkbox {
+            display: none;
+        }
+        .slider {
+            position: relative;
+            display: block;
+            width: 50px;
+            height: 26px;
+            background-color: var(--bar-bg-color);
+            border-radius: 13px;
+            transition: background-color 0.3s ease;
+        }
+        .slider-thumb {
+            position: absolute;
+            top: 3px;
+            left: 3px;
+            width: 20px;
+            height: 20px;
+            background-color: #fff;
+            border-radius: 50%;
+            transition: transform 0.3s ease;
+        }
+        .theme-switch-checkbox:checked + .slider {
+            background-color: var(--accent-color);
+        }
+        .theme-switch-checkbox:checked + .slider .slider-thumb {
+            transform: translateX(24px);
+        }
+
+        /* --- Resume Wrapper & Layout --- */
+        .resume-container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 40px;
+            background-color: var(--container-bg);
+            transition: background-color 0.3s ease;
+            box-shadow: 0 4px 25px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+        }
+
+        /* --- Header Section --- */
+        .header {
+            grid-column: 1 / -1; /* Span across both columns */
+            padding-bottom: 20px;
+        }
+
+        .header h1 {
+            font-family: var(--font-heading);
+            font-size: 42px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+            color: var(--text-color);
+            transition: color 0.3s ease;
+        }
+
+        .contact-info ul {
+            list-style: none;
+        }
+        .contact-info li {
+            margin-bottom: 8px;
+        }
+        .contact-info li a {
+            display: flex;
+            align-items: center;
+            color: var(--secondary-text-color);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+        .contact-info li a:hover {
+            color: var(--accent-color);
+        }
+        .contact-info svg {
+            width: 16px;
+            height: 16px;
+            margin-right: 12px;
+            color: var(--accent-color);
+            transition: color 0.2s ease;
+        }
+
+        /* --- Main & Sidebar Columns --- */
+        .main-column, .sidebar-column {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        /* --- Section Styling --- */
+        .section-title {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        .section-title h2 {
+            font-family: var(--font-heading);
+            font-size: 18px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-color);
+            transition: color 0.3s ease;
+        }
+        .icon-wrapper {
+            background-color: var(--icon-bg-color);
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            transition: background-color 0.3s ease;
+        }
+        .icon-wrapper svg {
+            width: 20px;
+            height: 20px;
+            color: var(--accent-color);
+            transition: color 0.3s ease;
+        }
+
+        /* --- Content Styling (Left Column) --- */
+        #summary p {
+            color: var(--secondary-text-color);
+        }
+
+        .project-item, .experience-item {
+            margin-bottom: 20px;
+        }
+
+        .project-item:last-of-type, .experience-item:last-of-type {
+            margin-bottom: 0;
+        }
+
+        .project-item p, .certification-item p {
+            color: var(--secondary-text-color);
+        }
+
+        h3 {
+            font-family: var(--font-heading);
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 5px;
+            color: var(--text-color);
+            transition: color 0.3s ease;
+        }
+
+        .item-meta {
+            color: var(--accent-color);
+            font-size: 13px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        
+        #education .item-meta, #education h3 {
+             margin-bottom: 0;
+        }
+
+        ul.cert-list {
+            list-style: none;
+            padding-left: 10px;
+        }
+
+        ul.cert-list li {
+             position: relative;
+             padding-left: 15px;
+             color: var(--secondary-text-color);
+             margin-bottom: 8px;
+        }
+
+        ul.cert-list li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+        }
+        
+        /* --- Skill & Language Bars (Right Column) --- */
+        .skill, .language {
+            margin-bottom: 15px;
+        }
+        .skill-list, .language-name {
+            font-weight: 700;
+            margin-bottom: 5px;
+            color: var(--text-color);
+            transition: color 0.3s ease;
+        }
+        .skill-list {
+            font-weight: 400; /* Skills don't need bold */
+            color: var(--secondary-text-color);
+        }
+
+        .progress-bar-container {
+            width: 100%;
+            height: 6px;
+            background-color: var(--bar-bg-color);
+            border-radius: 3px;
+            transition: background-color 0.3s ease;
+        }
+
+        .progress-bar {
+            height: 100%;
+            background-color: var(--accent-color);
+            border-radius: 3px;
+            transition: background-color 0.3s ease;
+        }
+
+        /* --- Responsive Design --- */
+        @media (max-width: 768px) {
+            .resume-container {
+                grid-template-columns: 1fr;
+                padding: 20px;
+                margin: 20px;
+            }
+            .header {
+                text-align: center;
+            }
+            .contact-info ul {
+                 align-items: center;
+                 display: flex;
+                 flex-direction: column;
+            }
+            .section-title {
+                 justify-content: center;
+            }
+            .theme-switcher {
+                top: 10px;
+                right: 10px;
+            }
+        }
+
+        /* --- Print Stylesheet --- */
+        @media print {
+            .theme-switcher {
+                display: none;
+            }
+            :root, .light-mode, body {
+                --bg-color: #ffffff !important;
+                --text-color: #000000 !important;
+                --accent-color: #000000 !important;
+                --secondary-text-color: #333333 !important;
+                --bar-bg-color: #dddddd !important;
+                --container-bg: #ffffff !important;
+            }
+            
+            @page {
+                size: A4;
+                margin: 20mm;
+            }
+
+            body {
+                background-color: #ffffff;
+                font-size: 10pt;
+            }
+            
+            .resume-container {
+                margin: 0;
+                padding: 0;
+                box-shadow: none;
+                max-width: 100%;
+                gap: 25px;
+            }
+
+            .icon-wrapper {
+                 display: none; /* Hide icons in print for a cleaner look */
+            }
+
+            .header h1 {
+                font-size: 28pt;
+            }
+            
+            a { text-decoration: none; color: #000 !important;}
+            
+            .progress-bar {
+                background-color: #333 !important; /* Use a dark gray for print */
+                print-color-adjust: exact;
+                -webkit-print-color-adjust: exact;
+            }
+            .section {
+                 page-break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="theme-switcher">
+        <label class="theme-switch-label" for="theme-switch" aria-label="Switch between dark and light mode">
+            <input type="checkbox" id="theme-switch" class="theme-switch-checkbox">
+            <span class="slider">
+                <span class="slider-thumb"></span>
+            </span>
+        </label>
+    </div>
+
+    <div class="resume-container">
+        
+        <header class="header">
+            <h1>Sidharth Sajith</h1>
+            <div class="contact-info">
+                <ul>
+                    <li><a href="#" title="Location"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M9.69 18.933l.003.001C9.89 19.02 10 19 10 19s.11.02.308-.066l.002-.001.006-.003.018-.008a5.741 5.741 0 00.281-.14c.186-.1.4-.27.61-.47.21-.2.4-.4.56-.6.17-.2.32-.4.44-.6.12-.2.23-.4.32-.6s.17-.38.24-.57c.07-.19.12-.39.15-.6.03-.2.05-.4.05-.6V10a1 1 0 00-2 0v3.5a.25.25 0 01-.11.209L9 15.366a1 1 0 00-.894 1.448l1.458 1.944a.25.25 0 01-.102.341z" clip-rule="evenodd" /><path d="M10 18a8 8 0 100-16 8 8 0 000 16zm0 2A10 10 0 1010 0a10 10 0 000 20z" /></svg>Kollam, Kerala (IN)</a></li>
+                    <li><a href="mailto:sidharthsajith005@gmail.com" title="Email Address"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path d="M3 4a2 2 0 00-2 2v1.161l8.441 4.221a1.25 1.25 0 001.118 0L19 7.162V6a2 2 0 00-2-2H3z" /><path d="M19 8.839l-7.77 3.885a2.75 2.75 0 01-2.46 0L1 8.839V14a2 2 0 002 2h14a2 2 0 002-2V8.839z" /></svg>sidharthsajith005@gmail.com</a></li>
+                    <li><a href="tel:+918089201760" title="Phone Number"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M2 3.5A1.5 1.5 0 013.5 2h1.148a1.5 1.5 0 011.465 1.175l7 14a1.5 1.5 0 01-1.465 1.825H3.5A1.5 1.5 0 012 17.5v-14zM3.5 4a.5.5 0 00-.5.5v12a.5.5 0 00.5.5h8.653a.5.5 0 00.488-.608l-3.5-7a.5.5 0 01.976-.216l3.5 7A.5.5 0 0016.5 16h-1.148a.5.5 0 01-.488-.392l-1-2A.5.5 0 0013 13h-2a.5.5 0 00-.488.608l1 2a.5.5 0 01-.488.392H8.5a.5.5 0 01-.488-.608l-1-2a.5.5 0 00-.976 0l1 2A.5.5 0 017 16H3.5a.5.5 0 01-.488-.608l-1.5-3A.5.5 0 002 12V5.5a.5.5 0 01.488-.608l1.5-3A.5.5 0 014.5 2h-1z" clip-rule="evenodd" /></svg>+91 8089201760</a></li>
+                </ul>
+            </div>
+        </header>
+
+        <div class="main-column">
+            <section class="section" id="summary">
+                <div class="section-title">
+                    <div class="icon-wrapper"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a5 5 0 1 0 5 5 5 5 0 0 0-5-5zm0 8a3 3 0 1 1 3-3 3 3 0 0 1-3 3zm9 11v-1a7 7 0 0 0-7-7h-4a7 7 0 0 0-7 7v1h2v-1a5 5 0 0 1 5-5h4a5 5 0 0 1 5 5v1z"></path></svg></div>
+                    <h2>Professional Summary</h2>
+                </div>
+                <p>Highly motivated Mechatronics and Robotics Engineering student specializing in the practical application of AI and Large Language Models (LLMs) to physical systems. Demonstrated expertise in integrating vision models (MediaPipe), generative AI (Gemini API), and deep learning frameworks (PyTorch) into embedded and robotic platforms. Passionate about architecting the next generation of intelligent, autonomous systems from prototype to deployment.</p>
+            </section>
+            
+            <section class="section" id="projects">
+                <div class="section-title">
+                     <div class="icon-wrapper"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m14.2 8.2-4.4 4.4L8.2 11 4 15.2l7.1 7.1 6.7-6.7-3.6-3.4zM22 2H2v10h2V4h16v16h-8v2h10V2z"></path><path d="m5.1 13.7-.8.8-1.9-1.9.8-.8z"></path></svg></div>
+                    <h2>Projects</h2>
+                </div>
+                <div class="project-item">
+                    <h3>NeuraHome: LLM-Powered Smart Environment</h3>
+                    <p>Architected a multi-modal smart home system featuring a Google Gemini powered conversational agent for advanced, natural language control and task automation.</p>
+                </div>
+                <div class="project-item">
+                    <h3>AI-Powered Slow-Motion Video Synthesis (RIFE)</h3>
+                    <p>Developed a high-fidelity video processing tool in Python that intelligently generates intermediate frames to convert standard videos (30fps) into smooth slow-motion (60/120fps).</p>
+                </div>
+                <div class="project-item">
+                    <h3>Real-Time Anti-Sleep System for Driver Safety</h3>
+                    <p>Built and deployed an embedded computer vision system on an Arduino to enhance driver alertness.</p>
+                </div>
+                <div class="project-item">
+                    <h3>Interactive Hand-Tracking Radar Visualization</h3>
+                    <p>Created a full-stack application that visualizes hand movements as a radar sweep using a Python Flask server and a Html frontend.</p>
+                </div>
+            </section>
+            
+            <section class="section" id="experience">
+                <div class="section-title">
+                    <div class="icon-wrapper"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20 6h-4V4c0-1.11-.89-2-2-2h-4c-1.11 0-2 .89-2 2v2H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-6 0h-4V4h4v2z"></path></svg></div>
+                    <h2>Experience</h2>
+                </div>
+                 <div class="experience-item">
+                    <h3>Member - IEEE, Robotics Society.</h3>
+                    <p class="item-meta">Oct. 2023 - Present</p>
+                </div>
+                 <div class="experience-item">
+                    <h3>ExCom Member, SESA.</h3>
+                    <p class="item-meta">October. 2023 - October. 2024</p>
+                </div>
+                 <div class="experience-item">
+                    <h3>Class Representative</h3>
+                    <p class="item-meta">September. 2023 - February. 2024</p>
+                </div>
+            </section>
+            
+            <section class="section" id="certifications">
+                <div class="section-title">
+                     <div class="icon-wrapper"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16 2H8C4.69 2 2 4.69 2 8v13a1 1 0 0 0 1 1h13c3.31 0 6-2.69 6-6V8c0-3.31-2.69-6-6-6zm4 14c0 2.21-1.79 4-4 4H4V8c0-2.21 1.79-4 4-4h8c2.21 0 4 1.79 4 4v8z"></path><path d="M15.28 12.39c.39.39 1.02.39 1.41 0s.39-1.02 0-1.41l-4.57-4.57a.996.996 0 0 0-1.41 0l-4.57 4.57c-.39.39-.39 1.02 0 1.41s1.02.39 1.41 0L12 8.52l3.28 3.87z"></path></svg></div>
+                    <h2>Certifications</h2>
+                </div>
+                <ul class="cert-list">
+                    <li>Prompt Design in Vertex AI - Google</li>
+                    <li>DeepLearning.AI TensorFlow Developer Professional Certificate</li>
+                    <li>GenAI Powered Data Analytics (Tata) - Forage</li>
+                    <li>Data Fundamentals - IBM Skillbuild</li>
+                    <li>Intro to IoT – NPTEL</li>
+                </ul>
+            </section>
+            
+             <section class="section" id="education">
+                <div class="section-title">
+                    <div class="icon-wrapper"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3L1 9l4 2.18v6.32L1 19l11 4 9-3.37V9.74L12 3zm6.82 6L12 11.71 5.18 8 12 5.29 18.82 8zM17 16.09l-5 1.83v-5.61l5-2.18v5.96z"></path></svg></div>
+                    <h2>Education</h2>
+                </div>
+                <h3>Saintgits College of Engineering</h3>
+                <p class="item-meta">B.Tech in Mechatronics, Robotics & Automation, July. 2027</p>
+            </section>
+        </div>
+
+        <div class="sidebar-column">
+             <section class="section" id="skills">
+                <div class="section-title">
+                    <div class="icon-wrapper"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19.43 12.98c.04-.32.07-.64.07-.98s-.03-.66-.07-.98l2.11-1.65c.19-.15.24-.42.12-.64l-2-3.46c-.12-.22-.39-.3-.61-.22l-2.49 1c-.52-.4-1.08-.73-1.69-.98l-.38-2.65C14.46 2.18 14.25 2 14 2h-4c-.25 0-.46.18-.49.42l-.38 2.65c-.61.25-1.17.59-1.69.98l-2.49-1c-.23-.09-.49 0-.61.22l-2 3.46c-.13.22-.07.49.12.64l2.11 1.65c-.04.32-.07.65-.07.98s.03.66.07.98l-2.11 1.65c-.19.15-.24.42-.12.64l2 3.46c.12.22.39.3.61.22l2.49-1c.52.4 1.08.73 1.69.98l.38 2.65c.03.24.24.42.49.42h4c.25 0 .46-.18.49-.42l.38-2.65c.61-.25 1.17-.59 1.69-.98l2.49 1c.23.09.49 0 .61-.22l2-3.46c.12-.22.07-.49-.12-.64l-2.11-1.65zM12 15.5c-1.93 0-3.5-1.57-3.5-3.5s1.57-3.5 3.5-3.5 3.5 1.57 3.5 3.5-1.57 3.5-3.5 3.5z"></path></svg></div>
+                    <h2>Skills</h2>
+                </div>
+                 <div class="skill">
+                     <p class="skill-list">PyTorch, CUDA, OpenCV, ROS 2, Gazebo, Stable-Baselines3, MediaPipe, AI/ML Model Integration</p>
+                 </div>
+                 <div class="skill">
+                     <p class="skill-list">Python, C++, C, NumPy, Pandas, FFmpeg, Git</p>
+                 </div>
+                 <div class="skill">
+                      <p class="skill-list">ESP32, Arduino, RISC-V (Vega), C/C++ for Embedded, SPI/I2C, Firebase, PlatformIO</p>
+                 </div>
+                 <div class="skill">
+                      <p class="skill-list">React, Next.js, Flask, HTML/CSS/JS, Linux, Solid Edge CAD</p>
+                 </div>
+            </section>
+            
+            <section class="section" id="languages">
+                <div class="section-title">
+                    <div class="icon-wrapper"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zm6.93 6h-2.95c-.32-1.25-.78-2.45-1.38-3.56 1.84.63 3.37 1.91 4.33 3.56zM12 4.04c.83 1.2 1.48 2.53 1.91 3.96h-3.82c.43-1.43 1.08-2.76 1.91-3.96zM4.26 6C5.22 4.41 6.75 3.14 8.59 2.44 7.82 3.55 7.36 4.75 7.05 6H4.26zm.42 2h2.95c-.32 1.25-.78 2.45-1.38 3.56-1.84-.63-3.37-1.9-4.33-3.56zM12 19.96c-.83-1.2-1.48-2.53-1.91-3.96h3.82c-.43 1.43-1.08 2.76-1.91 3.96zM15.34 18c-.59-1.11-1.05-2.31-1.38-3.56h2.95c-.96 1.65-2.49 2.93-4.33 3.56z"></path></svg></div>
+                    <h2>Languages</h2>
+                </div>
+                <div class="language">
+                    <p class="language-name">English</p>
+                    <div class="progress-bar-container"><div class="progress-bar" style="width: 95%;"></div></div>
+                </div>
+                <div class="language">
+                    <p class="language-name">Malayalam</p>
+                    <div class="progress-bar-container"><div class="progress-bar" style="width: 100%;"></div></div>
+                </div>
+                 <div class="language">
+                    <p class="language-name">Hindi</p>
+                    <div class="progress-bar-container"><div class="progress-bar" style="width: 70%;"></div></div>
+                </div>
+                 <div class="language">
+                    <p class="language-name">Arabic</p>
+                    <div class="progress-bar-container"><div class="progress-bar" style="width: 40%;"></div></div>
+                </div>
+            </section>
+        </div>
+        
+    </div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const themeSwitch = document.getElementById('theme-switch');
+
+        // Check for saved theme in localStorage
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'light') {
+            document.body.classList.add('light-mode');
+            themeSwitch.checked = true;
+        }
+
+        // Add event listener for the toggle
+        themeSwitch.addEventListener('change', () => {
+            if (themeSwitch.checked) {
+                document.body.classList.add('light-mode');
+                localStorage.setItem('theme', 'light');
+            } else {
+                document.body.classList.remove('light-mode');
+                localStorage.setItem('theme', 'dark');
+            }
+        });
+    });
+</script>
+
+</body>
+</html>
