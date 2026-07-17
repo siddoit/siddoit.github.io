@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Automated medication management system with servo dispensers and remote caregiver dashboard">
+  <meta name="author" content="Sidharth Sajith">
+  <title>IoT Smart Medicine Dispenser — Sidharth Sajith</title>
+  <link rel="icon" type="image/svg+xml" href="../assets/icons/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="container">
+      <a href="../index.html" class="nav-brand">Sidharth Sajith</a>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="nav-links" id="nav-links">
+        <a href="../index.html"    class="nav-link">About</a>
+        <a href="../projects.html" class="nav-link active">Projects</a>
+        <a href="../blog.html"     class="nav-link">Blog</a>
+        <a href="../cv.html"       class="nav-link">CV</a>
+        <a href="../contact.html"  class="nav-link">Contact</a>
+        <button class="theme-btn" id="theme-btn" aria-label="Toggle theme">🌙</button>
+      </div>
+    </div>
+  </nav>
+  <div id="reading-progress"></div>
+
+  <main class="project-detail">
+    <div class="container">
+
+      <div class="project-detail-header">
+        <a href="../projects.html" class="back-link">← Back to Projects</a>
+        <div class="project-detail-badges">
+          <span class="badge badge-green">Mar 2025</span>
+          <span class="badge badge-blue">Embedded</span>
+        </div>
+        <h1 class="project-detail-title">IoT Smart Medicine Dispenser</h1>
+        <p class="project-detail-subtitle">Automated medication management system with servo dispensers and remote caregiver dashboard</p>
+        <div class="project-detail-actions">
+          <a href="https://github.com/siddoit" target="_blank" rel="noopener" class="btn btn-primary">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12"/></svg>
+            View on GitHub
+          </a>
+        </div>
+      </div>
+
+      <div class="project-detail-body">
+
+        <section class="project-section">
+          <h2>Overview</h2>
+          <p>
+            An automated medication management system designed to improve dosage adherence for patients who require regular medication. ESP32 microcontrollers drive servo-actuated dispensers that release the correct medication at programmed times — removing the need for manual intervention and reducing the risk of missed or incorrect doses.
+          </p>
+        </section>
+
+        <section class="project-section">
+          <h2>Remote Dashboard</h2>
+          <p>
+            A web-based caregiver dashboard provides full remote control and monitoring without requiring physical access to the device. Caregivers can:
+          </p>
+          <ul>
+            <li>Monitor dosage adherence in real time</li>
+            <li>Receive instant alerts when a scheduled dose is missed</li>
+            <li>Modify dispense schedules remotely at any time</li>
+          </ul>
+        </section>
+
+        <section class="project-section">
+          <h2>Tech Stack</h2>
+          <div class="tech-stack-grid">
+            <span class="tech-chip">ESP32</span>
+            <span class="tech-chip">Servo Control</span>
+            <span class="tech-chip">Web Interface</span>
+            <span class="tech-chip">Python</span>
+            <span class="tech-chip">C</span>
+          </div>
+        </section>
+
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p class="footer-copy">&copy; <span id="footer-year"></span> Sidharth Sajith. All rights reserved.</p>
+      <div class="footer-links">
+        <a href="https://github.com/siddoit" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://www.linkedin.com/in/sidharthsajith/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="../contact.html">Contact</a>
+      </div>
+    </div>
+  </footer>
+  <script src="../script.js"></script>
+</body>
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="[FILL: Short description of this post, 1-2 sentences]">
+  <meta name="author" content="Sidharth Sajith">
+  <title>[FILL: Post Title] — Sidharth Sajith</title>
+  <link rel="icon" type="image/svg+xml" href="../assets/icons/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="container">
+      <a href="../index.html" class="nav-brand">Sidharth Sajith</a>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="nav-links" id="nav-links">
+        <a href="../index.html"    class="nav-link">About</a>
+        <a href="../projects.html" class="nav-link">Projects</a>
+        <a href="../blog.html"     class="nav-link active">Blog</a>
+        <a href="../cv.html"       class="nav-link">CV</a>
+        <a href="../contact.html"  class="nav-link">Contact</a>
+        <button class="theme-btn" id="theme-btn" aria-label="Toggle theme">🌙</button>
+      </div>
+    </div>
+  </nav>
+  <div id="reading-progress"></div>
+
+  <main class="page-wrapper">
+    <div class="container">
+
+      <!-- Back link -->
+      <a href="../blog.html" class="project-detail-back">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+        All Posts
+      </a>
+
+      <!-- Post header -->
+      <header class="post-header fade-in">
+        <h1>[FILL: Post Title]</h1>
+        <div class="post-meta">
+          <span>📅 [FILL: e.g. July 1, 2026]</span>
+          <span>·</span>
+          <span>☕ [FILL: e.g. 5 min read]</span>
+          <span>·</span>
+          <span class="badge badge-blue">[FILL: Category e.g. Robotics]</span>
+        </div>
+      </header>
+
+      <!-- Post body — write your content here -->
+      <article class="post-body fade-in">
+
+        <p>
+          [FILL: Opening paragraph — what is this post about? Hook the reader.]
+        </p>
+
+        <h2>Section 1 Title</h2>
+        <p>
+          [FILL: Write your content here. Use paragraphs, headings, lists, and code blocks.]
+        </p>
+
+        <h2>Section 2 Title</h2>
+        <p>
+          [FILL: More content.]
+        </p>
+
+        <ul>
+          <li>Point one</li>
+          <li>Point two</li>
+          <li>Point three</li>
+        </ul>
+
+        <!-- Code block example -->
+        <!--
+        <pre><code>
+# Example code
+import rclpy
+from rclpy.node import Node
+        </code></pre>
+        -->
+
+        <!-- Quote example -->
+        <!--
+        <blockquote>
+          A great quote or takeaway from what you learned.
+        </blockquote>
+        -->
+
+        <h2>Wrapping Up</h2>
+        <p>
+          [FILL: Summary and what's next.]
+        </p>
+
+        <hr>
+        <p class="text-muted">
+          Written by <a href="../index.html">Sidharth Sajith</a>.
+          If you found this useful, feel free to <a href="../contact.html">reach out</a>.
+        </p>
+
+      </article>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p class="footer-copy">
+        &copy; <span id="footer-year"></span> Sidharth Sajith. All rights reserved.
+      </p>
+      <div class="footer-links">
+        <a href="https://github.com/siddoit" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://www.linkedin.com/in/sidharthsajith/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="../contact.html">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+</html>

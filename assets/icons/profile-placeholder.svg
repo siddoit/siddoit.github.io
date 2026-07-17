@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none">
+  <!-- Dark circle background -->
+  <circle cx="100" cy="100" r="100" fill="#111827"/>
+  <!-- Geometric head silhouette with circuit lines -->
+  <circle cx="100" cy="78" r="32" stroke="#3B82F6" stroke-width="2" fill="none"/>
+  <path d="M60 155 C60 120 80 108 100 108 C120 108 140 120 140 155" stroke="#3B82F6" stroke-width="2" fill="none"/>
+  <!-- Circuit nodes -->
+  <circle cx="100" cy="46" r="3" fill="#3B82F6"/>
+  <circle cx="132" cy="78" r="3" fill="#3B82F6"/>
+  <circle cx="68" cy="78" r="3" fill="#3B82F6"/>
+  <circle cx="60" cy="155" r="3" fill="#3B82F6"/>
+  <circle cx="140" cy="155" r="3" fill="#3B82F6"/>
+  <!-- Circuit traces -->
+  <line x1="100" y1="46" x2="100" y2="30" stroke="#3B82F6" stroke-width="1" opacity="0.5"/>
+  <line x1="132" y1="78" x2="155" y2="78" stroke="#3B82F6" stroke-width="1" opacity="0.5"/>
+  <line x1="68" y1="78" x2="45" y2="78" stroke="#3B82F6" stroke-width="1" opacity="0.5"/>
+  <line x1="155" y1="78" x2="155" y2="55" stroke="#3B82F6" stroke-width="1" opacity="0.5"/>
+  <line x1="45" y1="78" x2="45" y2="55" stroke="#3B82F6" stroke-width="1" opacity="0.5"/>
+  <!-- Small circuit dots -->
+  <circle cx="155" cy="55" r="2" fill="#3B82F6" opacity="0.5"/>
+  <circle cx="45" cy="55" r="2" fill="#3B82F6" opacity="0.5"/>
+  <circle cx="100" cy="30" r="2" fill="#3B82F6" opacity="0.5"/>
+</svg>

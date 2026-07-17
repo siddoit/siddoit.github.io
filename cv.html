@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="CV of Sidharth Sajith — Robotics & Automation Engineer. Education, experience, projects, and skills.">
+  <meta name="author" content="Sidharth Sajith">
+  <title>CV — Sidharth Sajith</title>
+  <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="container">
+      <a href="index.html" class="nav-brand">Sidharth Sajith</a>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="nav-links" id="nav-links">
+        <a href="index.html"    class="nav-link">About</a>
+        <a href="projects.html" class="nav-link">Projects</a>
+        <a href="blog.html"     class="nav-link">Blog</a>
+        <a href="cv.html"       class="nav-link">CV</a>
+        <a href="contact.html"  class="nav-link">Contact</a>
+        <button class="theme-btn" id="theme-btn" aria-label="Toggle theme">🌙</button>
+      </div>
+    </div>
+  </nav>
+  <div id="reading-progress"></div>
+
+  <main class="page-wrapper">
+    <div class="container">
+
+      <header class="page-header fade-in">
+        <h1>Curriculum Vitae</h1>
+        <p>Last updated: June 2026</p>
+      </header>
+
+      <!-- Download bar -->
+      <div class="cv-download-bar fade-in">
+        <p>📄 Download my CV as a PDF for offline viewing or sharing with recruiters.</p>
+        <a href="assets/resume/Sidharth_Resume.pdf" download class="btn-download">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+            <polyline points="7 10 12 15 17 10"/>
+            <line x1="12" y1="15" x2="12" y2="3"/>
+          </svg>
+          Download PDF
+        </a>
+      </div>
+
+      <!-- EDUCATION -->
+      <section class="cv-section fade-in">
+        <h2 class="cv-section-title">Education</h2>
+        <div class="cv-item">
+          <div class="cv-date">Expected<br>Jul 2027</div>
+          <div class="cv-content">
+            <h3>B.Tech in Robotics and Automation</h3>
+            <p class="cv-org">Saintgits College of Engineering (Autonomous)</p>
+            <p class="cv-loc">Kottayam, Kerala, India</p>
+            <ul>
+              <li>Current CGPA: 6.4 &nbsp;·&nbsp; Batch: RB B &nbsp;·&nbsp; Semester 6 (as of 2026)</li>
+              <li>Selected for the TEEP Taiwan Internship Scheme through ICCC Saintgits</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- EXPERIENCE -->
+      <section class="cv-section fade-in">
+        <h2 class="cv-section-title">Professional Experience</h2>
+
+        <div class="cv-item">
+          <div class="cv-date">Oct 2025<br>– Present</div>
+          <div class="cv-content">
+            <h3>AI &amp; IoT Solutions Intern</h3>
+            <p class="cv-org">Innovizta (Campus Startup)</p>
+            <p class="cv-loc">Kottayam, Kerala</p>
+            <ul>
+              <li><strong>AI Stress Analysis:</strong> Engineered a multi-threaded desktop app integrating MediaPipe for posture tracking and TensorFlow for emotion detection, synced with ESP32 environmental sensors.</li>
+              <li><strong>Smart Inhaler:</strong> Developed a full-stack IoT solution bridging a physical inhaler to a Streamlit dashboard via MQTT, with automated Telegram alerts for dosage tracking and air quality monitoring.</li>
+              <li><strong>Intelligent Document Automation:</strong> Built a hybrid supply-chain tool using YOLOv8 and Gemini API to perform 3-way matching (PO, Delivery, Invoice), optimizing verification for scanned documents.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="cv-item">
+          <div class="cv-date">Aug 2025<br>– Present</div>
+          <div class="cv-content">
+            <h3>Embedded Systems Research Intern</h3>
+            <p class="cv-org">ICCC Saintgits — Taiwan India Collaboration</p>
+            <p class="cv-loc">Kottayam, Kerala</p>
+            <ul>
+              <li>Engineered a scalable 6-node distributed sensor network transmitting environmental data to a central server.</li>
+              <li>Developed firmware for NodeMCU ESP32S nodes to interface with AHT10 (Temp/Humidity), HL83 (Rain), and SDS011 (PM) sensors.</li>
+              <li>Integrated RESTful APIs (Open-Meteo, OGD India) to fetch real-time weather and pollution metrics for virtual reference node validation.</li>
+              <li>Utilized MQTT for low-latency telemetry and Python Multi-threading to synchronize asynchronous API data with high-frequency sensor streams.</li>
+              <li>Implemented backend scripts to parse incoming payloads and automatically generate MySQL logs for historical analysis.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROJECTS -->
+      <section class="cv-section fade-in">
+        <h2 class="cv-section-title">Selected Projects</h2>
+
+        <div class="cv-item">
+          <div class="cv-date">Ongoing</div>
+          <div class="cv-content">
+            <h3><a href="projects/adas.html">Autonomous Vehicle Research Platform</a></h3>
+            <p class="cv-org">TFLite · Isaac Sim · Android</p>
+            <ul>
+              <li>Architecting cost-effective ADAS by repurposing Samsung Galaxy S23 as primary edge compute for autonomous navigation.</li>
+              <li>Optimizing and quantizing object detection models for NPU deployment via TFLite.</li>
+              <li>Developing synthetic training environments in NVIDIA Isaac Sim for sim-to-real transfer.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="cv-item">
+          <div class="cv-date">Apr 2025</div>
+          <div class="cv-content">
+            <h3><a href="projects/aries-radar.html">Aries Radar System</a></h3>
+            <p class="cv-org">Computer Vision · Flask · MediaPipe</p>
+            <ul>
+              <li>Migrated legacy Tkinter code to Full-Stack Web Architecture (Flask + HTML5/JS) for browser-based hand tracking and radar visualization.</li>
+              <li>Optimized real-time data streaming to achieve sub-50ms latency.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="cv-item">
+          <div class="cv-date">Mar 2025</div>
+          <div class="cv-content">
+            <h3><a href="projects/medicine-dispenser.html">IoT Smart Medicine Dispenser</a></h3>
+            <p class="cv-org">ESP32 · Automation · Web Interface</p>
+            <ul>
+              <li>Prototyped automated medication management system with servo-actuated dispensers.</li>
+              <li>Integrated web dashboard for remote caregiver monitoring and schedule management.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="cv-item">
+          <div class="cv-date">Feb 2025</div>
+          <div class="cv-content">
+            <h3><a href="projects/neurahome.html">Srishti 2025 — Hardware &amp; Circuit Lead</a></h3>
+            <p class="cv-org">MediaPipe · Gemini API · ESP32</p>
+            <ul>
+              <li>Led 5-member team in 4-day rapid prototyping hackathon under strict deadlines.</li>
+              <li>Designed circuitry for NeuraHome (LLM-driven smart home automation) and Smart Fire Alarm system.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- ACHIEVEMENTS -->
+      <section class="cv-section fade-in">
+        <h2 class="cv-section-title">Achievements</h2>
+        <div class="cv-item">
+          <div class="cv-date">2025</div>
+          <div class="cv-content">
+            <h3>TEEP Taiwan Internship Scheme</h3>
+            <p class="cv-org">ICCC Saintgits — Taiwan India Collaboration</p>
+            <ul>
+              <li>Selected for the Taiwan Experience Education Program (TEEP) for embedded systems research collaboration between Saintgits and National CCU Taiwan.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="cv-item">
+          <div class="cv-date">Feb 2025</div>
+          <div class="cv-content">
+            <h3>Hardware &amp; Circuit Lead — Srishti 2025</h3>
+            <p class="cv-org">Saintgits College of Engineering</p>
+            <ul>
+              <li>Led hardware team to deliver two functional prototypes (NeuraHome + Smart Fire Alarm) in 4 days.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- SKILLS -->
+      <section class="cv-section fade-in">
+        <h2 class="cv-section-title">Technical Skills</h2>
+        <div class="skills-section">
+          <div class="skill-row">
+            <span class="skill-category-name">Robotics</span>
+            <div class="skill-tags">
+              <span class="skill-tag">ROS 2 (Humble)</span>
+              <span class="skill-tag">NVIDIA Isaac Sim</span>
+              <span class="skill-tag">Gazebo</span>
+              <span class="skill-tag">Navigation2</span>
+              <span class="skill-tag">URDF</span>
+            </div>
+          </div>
+          <div class="skill-row">
+            <span class="skill-category-name">AI / CV</span>
+            <div class="skill-tags">
+              <span class="skill-tag">TensorFlow</span>
+              <span class="skill-tag">PyTorch</span>
+              <span class="skill-tag">MediaPipe</span>
+              <span class="skill-tag">OpenCV</span>
+              <span class="skill-tag">TFLite</span>
+              <span class="skill-tag">YOLO</span>
+              <span class="skill-tag">Gemini API</span>
+            </div>
+          </div>
+          <div class="skill-row">
+            <span class="skill-category-name">Languages</span>
+            <div class="skill-tags">
+              <span class="skill-tag">Python</span>
+              <span class="skill-tag">C++</span>
+              <span class="skill-tag">C</span>
+            </div>
+          </div>
+          <div class="skill-row">
+            <span class="skill-category-name">Hardware</span>
+            <div class="skill-tags">
+              <span class="skill-tag">ESP32</span>
+              <span class="skill-tag">NodeMCU</span>
+              <span class="skill-tag">Arduino</span>
+              <span class="skill-tag">PCB Design</span>
+              <span class="skill-tag">I2C/SPI</span>
+              <span class="skill-tag">Power Systems</span>
+            </div>
+          </div>
+          <div class="skill-row">
+            <span class="skill-category-name">Dev Tools</span>
+            <div class="skill-tags">
+              <span class="skill-tag">React.js</span>
+              <span class="skill-tag">Flask</span>
+              <span class="skill-tag">Streamlit</span>
+              <span class="skill-tag">Linux (Kubuntu)</span>
+              <span class="skill-tag">Git</span>
+              <span class="skill-tag">Docker</span>
+              <span class="skill-tag">MQTT</span>
+              <span class="skill-tag">MySQL</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p class="footer-copy">
+        &copy; <span id="footer-year"></span> Sidharth Sajith. All rights reserved.
+      </p>
+      <div class="footer-links">
+        <a href="https://github.com/siddoit" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://www.linkedin.com/in/sidharthsajith/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
