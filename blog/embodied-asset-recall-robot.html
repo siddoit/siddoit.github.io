@@ -1,0 +1,112 @@
+﻿<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A final-year robot that finds your moved tools offline — no cloud, no LiDAR, no RFID, just a Jetson and some stubborn VLMs.">
+  <meta name="author" content="Sidharth Sajith">
+  <title>A Robot That Remembers Where You Left Your Wrench — Sidharth Sajith</title>
+  <link rel="icon" type="image/svg+xml" href="../assets/icons/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="container">
+      <a href="../index.html" class="nav-brand">Sidharth Sajith</a>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="nav-links" id="nav-links">
+        <a href="../index.html"    class="nav-link">About</a>
+        <a href="../projects.html" class="nav-link">Projects</a>
+        <a href="../blog.html"     class="nav-link active">Blog</a>
+        <a href="../cv.html"       class="nav-link">CV</a>
+        <a href="../contact.html"  class="nav-link">Contact</a>
+        <button class="theme-btn" id="theme-btn" aria-label="Toggle theme">Theme</button>
+      </div>
+    </div>
+  </nav>
+  <div id="reading-progress"></div>
+
+  <main class="page-wrapper">
+    <div class="container">
+
+      <a href="../blog.html" class="project-detail-back">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+        All Posts
+      </a>
+
+      <header class="post-header fade-in">
+        <h1>A Robot That Remembers Where You Left Your Wrench</h1>
+        <div class="post-meta">
+          <span>Published: April 15, 2026</span>
+          <span>·</span>
+          <span>Robotics</span>
+        </div>
+      </header>
+
+      <article class="post-body fade-in">
+        <p class="lead">
+          "Go fetch the 10mm spanner" is a sentence no robot takes seriously — until now. Our final-year project
+          is a robot that actually remembers where things were last seen, walks over, and points.
+        </p>
+
+        <p>
+          The pitch is dead simple: an indoor asset-recall robot that runs <strong>fully offline</strong> on
+          cheap edge hardware, understands the layout of a lab or workshop, and can later navigate back to find
+          a tool that got moved. The demos we built toward are industrial tool recall, safety-item inspection,
+          and — if all else fails — finding your lost stuff at home.
+        </p>
+
+        <h2>What makes it not-boring</h2>
+        <p>
+          Plenty of robots move and detect. Ours does something harder: it <em>remembers</em>. The differentiator
+          we kept coming back to is what it does <strong>not</strong> need — no cloud, no LiDAR, no RFID tags.
+          Just a Jetson-class board, some vision-language models, and a stubborn belief that a robot should find
+          your things without phoning a data center.
+        </p>
+
+        <h2>How the memory works</h2>
+        <p>
+          It builds a persistent, open-vocabulary 3D scene graph of the space — objects labelled with models
+          like YOLO-World, Florence-2, and CLIP, so you can ask for things in plain language. When something's
+          been moved, a Bayesian belief model drives active search: it guesses where the item is <em>most</em>
+          likely to be and goes there first, instead of sweeping the room blind. That's the trick that makes it
+          feel less like a vacuum and more like it knows the place.
+        </p>
+
+        <h2>Why it could be a paper</h2>
+        <p>
+          The angle that makes supervisors happy is "low-cost offline semantic memory plus probabilistic active
+          search," and it holds up as a system paper if we collect the experiments properly. For us, the appeal
+          is simpler: a robot that doesn't need the internet to know where you left your wrench is a robot you'd
+          actually let loose in a workshop.
+        </p>
+
+        <hr>
+        <p class="text-muted">
+
+          If you found this useful, feel free to <a href="../contact.html">reach out</a>.
+        </p>
+      </article>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p class="footer-copy">&copy; <span id="footer-year"></span> Sidharth Sajith &middot; <a href="https://github.com/siddoit/siddoit.github.io" target="_blank" rel="noopener">Source</a></p>
+      <div class="footer-links">
+        <a href="https://github.com/siddoit" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://www.linkedin.com/in/sidharthsajith/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="../contact.html">Contact</a>
+      </div>
+    </div>
+  </footer>
+  <script src="../script.js"></script>
+</body>
+</html>

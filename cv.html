@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8">
@@ -26,7 +26,7 @@
         <a href="blog.html"     class="nav-link">Blog</a>
         <a href="cv.html"       class="nav-link">CV</a>
         <a href="contact.html"  class="nav-link">Contact</a>
-        <button class="theme-btn" id="theme-btn" aria-label="Toggle theme">🌙</button>
+        <button class="theme-btn" id="theme-btn" aria-label="Toggle theme">Theme</button>
       </div>
     </div>
   </nav>
@@ -37,13 +37,17 @@
 
       <header class="page-header fade-in">
         <h1>Curriculum Vitae</h1>
-        <p>Last updated: June 2026</p>
+        <p>Last updated: July 2026</p>
+        <div class="cv-bio">
+          <p>Robotics and AI/ML engineering student specializing in ROS 2, autonomous systems, embedded hardware, computer vision, and edge AI deployment. Currently interning at Innovizta, ICCC Saintgits, and KEL.</p>
+          <p class="cv-contact">Kottayam, Kerala &middot; +91-8089201760 &middot; sidharthsajith005@gmail.com</p>
+        </div>
       </header>
 
       <!-- Download bar -->
       <div class="cv-download-bar fade-in">
-        <p>📄 Download my CV as a PDF for offline viewing or sharing with recruiters.</p>
-        <a href="assets/resume/Sidharth_Resume.pdf" download class="btn-download">
+        <p>Download my CV as a PDF for offline viewing or sharing with recruiters.</p>
+        <a href="assets/resume/Sidharth_Sajith_Resume.pdf" download class="btn-download">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
             <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
             <polyline points="7 10 12 15 17 10"/>
@@ -64,7 +68,6 @@
             <p class="cv-loc">Kottayam, Kerala, India</p>
             <ul>
               <li>Current CGPA: 6.4 &nbsp;·&nbsp; Batch: RB B &nbsp;·&nbsp; Semester 6 (as of 2026)</li>
-              <li>Selected for the TEEP Taiwan Internship Scheme through ICCC Saintgits</li>
             </ul>
           </div>
         </div>
@@ -103,6 +106,20 @@
             </ul>
           </div>
         </div>
+
+        <div class="cv-item">
+          <div class="cv-date">Aug 2025<br>&ndash; Present</div>
+          <div class="cv-content">
+            <h3>R&amp;D Intern (Research Project)</h3>
+            <p class="cv-org">Kerala Electrical &amp; Allied Engineering Co. Ltd. (KEL)</p>
+            <p class="cv-loc">Mamala, Kerala</p>
+            <ul>
+              <li>Conducted feasibility research on automated robotic systems for stacking transformer core laminations in industrial manufacturing.</li>
+              <li>Developed preliminary kinematic and motion-planning concepts for automated pick, lift, orient, and place operations.</li>
+              <li>Evaluated mechanical automation concepts, sensing requirements, and integration with existing industrial workflows and safety systems.</li>
+            </ul>
+          </div>
+        </div>
       </section>
 
       <!-- PROJECTS -->
@@ -113,11 +130,37 @@
           <div class="cv-date">Ongoing</div>
           <div class="cv-content">
             <h3><a href="projects/adas.html">Autonomous Vehicle Research Platform</a></h3>
-            <p class="cv-org">TFLite · Isaac Sim · Android</p>
+            <p class="cv-org">PyTorch · TFLite · Qualcomm AI Hub · Isaac Sim</p>
             <ul>
-              <li>Architecting cost-effective ADAS by repurposing Samsung Galaxy S23 as primary edge compute for autonomous navigation.</li>
-              <li>Optimizing and quantizing object detection models for NPU deployment via TFLite.</li>
+              <li>Architecting ADAS on a $400 Galaxy S23 instead of a $2,000 Jetson dev kit as primary edge compute for autonomous navigation.</li>
+              <li>Building a heterogeneous Snapdragon 8 Gen 2 pipeline distributing perception across GPU, NPU, and CPU via Qualcomm AI Hub.</li>
               <li>Developing synthetic training environments in NVIDIA Isaac Sim for sim-to-real transfer.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="cv-item">
+          <div class="cv-date">Ongoing</div>
+          <div class="cv-content">
+            <h3><a href="projects/asset-recall.html">Embodied Semantic Asset Recall Robot</a></h3>
+            <p class="cv-org">ROS 2 · Jetson Orin Nano · Edge AI · VLMs</p>
+            <ul>
+              <li>Building a fully offline autonomous mobile robot for semantic asset recall using Jetson Orin Nano, ROS 2, Nav2, and ARCore visual-inertial odometry.</li>
+              <li>Designing persistent semantic memory with open-vocabulary 3D scenegraphs, YOLO-World, Florence-2, and CLIP for natural-language object queries.</li>
+              <li>Implementing Bayesian belief-based active search to locate relocated objects without cloud, LiDAR, or depth cameras.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="cv-item">
+          <div class="cv-date">Jun 2026</div>
+          <div class="cv-content">
+            <h3><a href="projects/edubot.html">EduBot — Interactive Educational Robot</a></h3>
+            <p class="cv-org">Raspberry Pi 5 · LLM · Speech AI · AWS Rekognition</p>
+            <ul>
+              <li>Developed an AI-powered educational robot on Raspberry Pi 5 with integrated LLM, speech-to-text, and text-to-speech.</li>
+              <li>Integrated AWS Rekognition for vision-based student identification and a custom administration interface.</li>
+              <li>Designed bilingual English and Malayalam conversational workflows for interactive primary-school learning.</li>
             </ul>
           </div>
         </div>
@@ -161,14 +204,24 @@
 
       <!-- ACHIEVEMENTS -->
       <section class="cv-section fade-in">
-        <h2 class="cv-section-title">Achievements</h2>
+        <h2 class="cv-section-title">Achievements &amp; Leadership</h2>
         <div class="cv-item">
           <div class="cv-date">2025</div>
           <div class="cv-content">
-            <h3>TEEP Taiwan Internship Scheme</h3>
-            <p class="cv-org">ICCC Saintgits — Taiwan India Collaboration</p>
+            <h3>National Top 50 — e-Yantra Robotics Competition</h3>
+            <p class="cv-org">IIT Bombay</p>
             <ul>
-              <li>Selected for the Taiwan Experience Education Program (TEEP) for embedded systems research collaboration between Saintgits and National CCU Taiwan.</li>
+              <li>Ranked among the national top 50 teams in the e-Yantra robotics challenge.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="cv-item">
+          <div class="cv-date">2025</div>
+          <div class="cv-content">
+            <h3>Chairperson — Robotics Society of India (RSI), Saintgits Chapter</h3>
+            <p class="cv-org">Saintgits College of Engineering</p>
+            <ul>
+              <li>Lead the student chapter of the Robotics Society of India at Saintgits.</li>
             </ul>
           </div>
         </div>
@@ -182,6 +235,27 @@
             </ul>
           </div>
         </div>
+        <div class="cv-item">
+          <div class="cv-date">2025</div>
+          <div class="cv-content">
+            <h3>Core Executive — SESA &middot; Autonomous Systems Volunteer — BAJA SAE</h3>
+            <p class="cv-org">Saintgits Engineering Students Association</p>
+            <ul>
+              <li>Core Executive Committee Member of SESA.</li>
+              <li>Trained YOLO-based perception models for traffic signs, signals, and object detection for BAJA SAE autonomous vehicle applications.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="cv-item">
+          <div class="cv-date">Mar 2026</div>
+          <div class="cv-content">
+            <h3>Participant — AI Impact Summit Buildathon</h3>
+            <p class="cv-org">HCL GUVI</p>
+            <ul>
+              <li>Participated in the AI Impact Summit Buildathon hosted by HCL GUVI.</li>
+            </ul>
+          </div>
+        </div>
       </section>
 
       <!-- SKILLS -->
@@ -192,22 +266,30 @@
             <span class="skill-category-name">Robotics</span>
             <div class="skill-tags">
               <span class="skill-tag">ROS 2 (Humble)</span>
-              <span class="skill-tag">NVIDIA Isaac Sim</span>
+              <span class="skill-tag">Nav2</span>
               <span class="skill-tag">Gazebo</span>
-              <span class="skill-tag">Navigation2</span>
+              <span class="skill-tag">NVIDIA Isaac Sim</span>
               <span class="skill-tag">URDF</span>
+              <span class="skill-tag">SLAM</span>
+              <span class="skill-tag">OctoMap</span>
+              <span class="skill-tag">Visual-Inertial Odometry</span>
             </div>
           </div>
           <div class="skill-row">
             <span class="skill-category-name">AI / CV</span>
             <div class="skill-tags">
-              <span class="skill-tag">TensorFlow</span>
               <span class="skill-tag">PyTorch</span>
-              <span class="skill-tag">MediaPipe</span>
+              <span class="skill-tag">TensorFlow</span>
+              <span class="skill-tag">Scikit-Learn</span>
               <span class="skill-tag">OpenCV</span>
+              <span class="skill-tag">MediaPipe</span>
+              <span class="skill-tag">YOLOv8</span>
+              <span class="skill-tag">YOLO26</span>
               <span class="skill-tag">TFLite</span>
-              <span class="skill-tag">YOLO</span>
+              <span class="skill-tag">Hugging Face</span>
               <span class="skill-tag">Gemini API</span>
+              <span class="skill-tag">RAG</span>
+              <span class="skill-tag">AWS Rekognition</span>
             </div>
           </div>
           <div class="skill-row">
@@ -216,6 +298,8 @@
               <span class="skill-tag">Python</span>
               <span class="skill-tag">C++</span>
               <span class="skill-tag">C</span>
+              <span class="skill-tag">JavaScript</span>
+              <span class="skill-tag">SQL</span>
             </div>
           </div>
           <div class="skill-row">
@@ -226,6 +310,8 @@
               <span class="skill-tag">Arduino</span>
               <span class="skill-tag">PCB Design</span>
               <span class="skill-tag">I2C/SPI</span>
+              <span class="skill-tag">ESP-IDF</span>
+              <span class="skill-tag">PlatformIO</span>
               <span class="skill-tag">Power Systems</span>
             </div>
           </div>
@@ -240,6 +326,9 @@
               <span class="skill-tag">Docker</span>
               <span class="skill-tag">MQTT</span>
               <span class="skill-tag">MySQL</span>
+              <span class="skill-tag">REST APIs</span>
+              <span class="skill-tag">Qualcomm AI Hub</span>
+              <span class="skill-tag">ARCore</span>
             </div>
           </div>
         </div>
@@ -251,7 +340,7 @@
   <footer class="footer">
     <div class="container">
       <p class="footer-copy">
-        &copy; <span id="footer-year"></span> Sidharth Sajith. All rights reserved.
+        &copy; <span id="footer-year"></span> Sidharth Sajith &middot; <a href="https://github.com/siddoit/siddoit.github.io" target="_blank" rel="noopener">Source</a>
       </p>
       <div class="footer-links">
         <a href="https://github.com/siddoit" target="_blank" rel="noopener">GitHub</a>
@@ -264,3 +353,4 @@
   <script src="script.js"></script>
 </body>
 </html>
+

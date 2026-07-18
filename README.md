@@ -37,18 +37,57 @@ A minimal, modern **dark-themed** portfolio website for a **Robotics & Automatio
 portfolio/
 ├── index.html              # Main HTML page
 ├── style.css               # All styles (variables, layout, components)
-├── script.js               # Interactivity (scroll, menu, animations)
+├── script.js               # Interactivity (scroll, menu, animations, active nav)
 ├── README.md               # This file
 │
+├── blog.html               # Blog index (cards render automatically)
+├── blog/
+│   ├── post-template.html  # Copy this for each new post
+│   └── <slug>.html         # Individual post pages
+├── projects.html           # Projects grid
+└── projects/
+    └── <project>.html      # Individual project detail pages
+│
 └── assets/
+    ├── js/
+    │   ├── posts.js         # Blog post metadata (add an entry per post)
+    │   └── blog.js          # Renders blog cards from posts.js
     ├── icons/
     │   ├── favicon.svg         # SS initials favicon
     │   └── profile-placeholder.svg  # Circuit-style profile avatar
     ├── images/
-    │   └── (project thumbnails go here)
+    │   └── (optional profile.jpg / project thumbnails)
     └── resume/
-        └── Sidharth_Resume.pdf  # Your resume PDF (add manually)
+        └── Sidharth_Sajith_Resume.pdf  # Canonical resume PDF
 ```
+
+---
+
+## ✍️ Writing a Blog Post
+
+The blog is JSON-driven — you never hand-edit cards.
+
+1. Copy `blog/post-template.html` to `blog/<your-slug>.html` and write your content.
+2. Open `assets/js/posts.js` and add an entry:
+   ```javascript
+   {
+     slug: "your-slug",
+     title: "Your Post Title",
+     date: "2026-07-20",
+     excerpt: "One-line summary.",
+     tags: ["Edge AI", "Jetson"]
+   }
+   ```
+3. That's it. `blog.html` and the "Recent Posts" list on `index.html` update automatically.
+   Newest posts sort to the top. Posts are linked as `blog/<slug>.html`.
+
+---
+
+## 🛠️ Adding a Project
+
+1. Copy an existing `projects/<project>.html` and fill in the content.
+2. Add a card to `projects.html` pointing to it.
+3. Give it a consistent footer: a `.project-footer` with GitHub/Demo links and tech tags.
 
 ---
 
@@ -86,9 +125,10 @@ python -m http.server 8080
 
 - **Colors**: Edit CSS variables in `:root` in `style.css`
 - **Content**: Update text directly in `index.html`
-- **Projects**: Add/remove `.project-card` blocks in the Projects section
-- **Resume**: Place your PDF at `assets/resume/Sidharth_Resume.pdf`
-- **Profile photo**: Replace `assets/icons/profile-placeholder.svg` with a real image
+- **Projects**: Add/remove `.project-card` blocks in `projects.html`
+- **Resume**: Replace `assets/resume/Sidharth_Sajith_Resume.pdf`
+- **Profile photo**: Add `assets/images/profile.jpg` (or keep the placeholder SVG)
+- **Blog posts**: See "Writing a Blog Post" above
 
 ---
 
@@ -99,8 +139,3 @@ MIT
 ## 📬 Contact
 
 Sidharth Sajith — sidharthsajith005@gmail.com
-
-
-> umm can u make an wasier way for me to make blog posts..., avoid using emojies, also make it less ai like, i dont want it to seems generic, also in
-  projects, when u open some, the text is hot cohesive and aligned, looks out fo place, CV is okay, but dont it need to have some of my biodata as well, no
-  need to add to much buzzwords as well

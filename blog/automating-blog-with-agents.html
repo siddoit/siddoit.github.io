@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="How discovering OpenCode and an agentic multimodal model turned my messy notes into blog posts — and what happens when the free model goes paid in July.">
+  <meta name="author" content="Sidharth Sajith">
+  <title>How I Accidentally Automated My Blog Posts — Sidharth Sajith</title>
+  <link rel="icon" type="image/svg+xml" href="../assets/icons/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="container">
+      <a href="../index.html" class="nav-brand">Sidharth Sajith</a>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="nav-links" id="nav-links">
+        <a href="../index.html"    class="nav-link">About</a>
+        <a href="../projects.html" class="nav-link">Projects</a>
+        <a href="../blog.html"     class="nav-link active">Blog</a>
+        <a href="../cv.html"       class="nav-link">CV</a>
+        <a href="../contact.html"  class="nav-link">Contact</a>
+        <button class="theme-btn" id="theme-btn" aria-label="Toggle theme">Theme</button>
+      </div>
+    </div>
+  </nav>
+  <div id="reading-progress"></div>
+
+  <main class="page-wrapper">
+    <div class="container">
+
+      <a href="../blog.html" class="project-detail-back">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+        All Posts
+      </a>
+
+      <header class="post-header fade-in">
+        <h1>How I Accidentally Automated My Blog Posts</h1>
+        <div class="post-meta">
+          <span>Published: July 17, 2026</span>
+          <span>·</span>
+          <span>Tooling</span>
+        </div>
+      </header>
+
+      <article class="post-body fade-in">
+        <p class="lead">
+          I didn't set out to automate my blog. I set out to stop fighting my own messy notes. Somewhere along
+          the way I found a tool and a model that do the fighting for me — and July is when that free ride ends.
+        </p>
+
+        <h2>Falling into OpenCode</h2>
+        <p>
+          I stumbled onto <strong>OpenCode</strong>, an agentic, multimodal coding agent that runs in the
+          terminal. Not another chatbot you paste code into — something that actually reads your files, plans,
+          and edits. For someone who lives in a folder of HTML, CSS, and half-finished projects, that's a
+          different kind of help. It's the agentic, multimodal side that got me: I can throw in a wall of text,
+          a screenshot, a vague idea, and it figures out the move.
+        </p>
+
+        <h2>The model doing the heavy lifting</h2>
+        <p>
+          Under the hood, the model that clicked for me is <strong>hy3</strong> — fast, cheap, and genuinely
+          good at exactly this: taking a scrambled brain-dump and turning it into something coherent. For my
+          use case it's been one of the best-fitting models I've touched. The catch is the clock: hy3 goes away
+          this July, moving to a paid version. That stings, because the free tier is what made experimenting
+          feel weightless.
+        </p>
+
+        <h2>Enter Nemotron 3 Ultra</h2>
+        <p>
+          The upside is that there's a strong free alternative lined up: <strong>NVIDIA Nemotron 3 Ultra</strong>.
+          It's an open-weights model built for research, and it's one of the best free open-weight options out
+          there right now for exactly this kind of work — summarising, restructuring, cleaning up prose without
+          sandblasting the voice out of it. I've been pointed at it as the drop-in for when hy3 flips to paid,
+          and from what I've run, it earns the spot.
+        </p>
+
+        <h2>What my "automation" actually is</h2>
+        <p>
+          It's not a pipeline or a cron job. It's embarrassingly simple: I type my mind into the agent — the raw
+          thoughts, the swearing, the half-structured war stories — and it summarises and perfects them into
+          something post-worthy. The projects you've been reading about here went through exactly that. I write
+          like a human mid-rant; it hands back a draft that reads like a person who edited it. That's the whole
+          trick, and it's why the blog finally has more than a "coming soon" page.
+        </p>
+
+        <h2>Why it's worth a post</h2>
+        <p>
+          Because the interesting part isn't the tool, it's the shift: writing used to be the bottleneck, and
+          now it isn't. Free, open-weights models like Nemotron 3 Ultra are good enough that a student can keep
+          a real blog without paying for it. When hy3 goes paid this month, I'll just be one model over — and
+          the posts will keep coming.
+        </p>
+
+        <hr>
+        <p class="text-muted">
+          If you found this useful, feel free to <a href="../contact.html">reach out</a>.
+        </p>
+      </article>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p class="footer-copy">&copy; <span id="footer-year"></span> Sidharth Sajith &middot; <a href="https://github.com/siddoit/siddoit.github.io" target="_blank" rel="noopener">Source</a></p>
+      <div class="footer-links">
+        <a href="https://github.com/siddoit" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://www.linkedin.com/in/sidharthsajith/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="../contact.html">Contact</a>
+      </div>
+    </div>
+  </footer>
+  <script src="../script.js"></script>
+</body>
+</html>

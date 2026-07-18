@@ -15,7 +15,11 @@ function getTheme() {
 function applyTheme(t) {
   root.setAttribute('data-theme', t);
   localStorage.setItem('theme', t);
-  if (themeBtn) themeBtn.textContent = t === 'dark' ? '☀️' : '🌙';
+  if (themeBtn) {
+    themeBtn.innerHTML = t === 'dark'
+      ? '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>'
+      : '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
+  }
 }
 
 applyTheme(getTheme());
@@ -56,12 +60,21 @@ navLinks?.querySelectorAll('.nav-link').forEach(l => {
 
 // ─── Active Nav Link ──────────────────────────────────────────────────────────
 (function () {
-  const path = window.location.pathname.replace(/\/$/, '').replace(/\.html$/, '');
+  const full = window.location.pathname;            // e.g. /portfolio/projects/adas.html
+  const file = full.split('/').pop() || 'index.html'; // adas.html / index.html
+  const inProjects = full.includes('/projects/');
+  const inBlog     = full.includes('/blog/');
+
   document.querySelectorAll('.nav-link').forEach(link => {
-    const href = link.getAttribute('href')?.replace(/\/$/, '').replace(/\.html$/, '');
-    const isHome = (path === '' || path.endsWith('/index')) && (href === '/' || href === './index' || href === '');
-    const isCurrent = !isHome && href && path.endsWith(href);
-    if (isHome || isCurrent) link.classList.add('active');
+    link.classList.remove('active');
+    const href = (link.getAttribute('href') || '').split('/').pop();
+
+    let active = false;
+    if (inProjects && href === 'projects.html') active = true;
+    else if (inBlog && href === 'blog.html')     active = true;
+    else if (!inProjects && !inBlog && href === file) active = true;
+
+    if (active) link.classList.add('active');
   });
 })();
 

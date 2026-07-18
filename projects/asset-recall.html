@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Fully offline autonomous mobile robot for semantic asset recall using NVIDIA Jetson Orin Nano, ROS 2, and vision-language models. Sidharth Sajith.">
+  <meta name="author" content="Sidharth Sajith">
+  <title>Embodied Semantic Asset Recall Robot — Sidharth Sajith</title>
+  <link rel="icon" type="image/svg+xml" href="../assets/icons/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="container">
+      <a href="../index.html" class="nav-brand">Sidharth Sajith</a>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="nav-links" id="nav-links">
+        <a href="../index.html"    class="nav-link">About</a>
+        <a href="../projects.html" class="nav-link active">Projects</a>
+        <a href="../blog.html"     class="nav-link">Blog</a>
+        <a href="../cv.html"       class="nav-link">CV</a>
+        <a href="../contact.html"  class="nav-link">Contact</a>
+        <button class="theme-btn" id="theme-btn" aria-label="Toggle theme">Theme</button>
+      </div>
+    </div>
+  </nav>
+  <div id="reading-progress"></div>
+
+  <main class="project-detail">
+    <div class="container">
+
+      <div class="project-detail-header">
+        <a href="../projects.html" class="back-link">&larr; Back to Projects</a>
+        <div class="project-detail-badges">
+          <span class="badge badge-orange">Ongoing</span>
+          <span class="badge badge-blue">Edge AI</span>
+          <span class="badge badge-blue">Robotics</span>
+        </div>
+        <h1 class="project-detail-title">Embodied Semantic Asset Recall Robot</h1>
+        <p class="project-detail-subtitle">A fully offline autonomous mobile robot that finds objects from natural-language queries, built on Jetson Orin Nano and ROS 2.</p>
+        <div class="project-detail-actions">
+          <a href="https://github.com/siddoit" target="_blank" rel="noopener" class="btn btn-primary">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12"/></svg>
+            View on GitHub
+          </a>
+        </div>
+      </div>
+
+      <div class="project-detail-body">
+
+        <section class="project-section">
+          <h2>Overview</h2>
+          <p>
+            An autonomous mobile robot that retrieves physical objects on command — you ask for "the red
+            toolbox from last week" and it goes and finds it. Everything runs <strong>offline</strong> on an
+            <strong>NVIDIA Jetson Orin Nano</strong> with <strong>ROS 2</strong>, <strong>Nav2</strong>, and
+            ARCore-based visual-inertial odometry. No cloud, no LiDAR, no dedicated depth camera.
+          </p>
+        </section>
+
+        <section class="project-section">
+          <h2>Semantic Memory</h2>
+          <p>
+            The robot builds a persistent, open-vocabulary 3D scene graph of its environment. Objects are
+            detected and labelled with <strong>YOLO-World</strong>, <strong>Florence-2</strong>, and
+            <strong>CLIP</strong> embeddings, so it can answer natural-language queries about what it has seen
+            and where.
+          </p>
+        </section>
+
+        <section class="project-section">
+          <h2>Active Search</h2>
+          <p>
+            When an object has been moved, a <strong>Bayesian belief</strong> model drives active search —
+            prioritising where the item is most likely to be rather than scanning blindly. This keeps the robot
+            useful in messy, changing spaces without any cloud service.
+          </p>
+        </section>
+
+        <section class="project-section">
+          <h2>Tech Stack</h2>
+          <div class="tech-stack-grid">
+            <span class="tech-chip">ROS 2</span>
+            <span class="tech-chip">Nav2</span>
+            <span class="tech-chip">Jetson Orin Nano</span>
+            <span class="tech-chip">YOLO-World</span>
+            <span class="tech-chip">Florence-2</span>
+            <span class="tech-chip">CLIP</span>
+            <span class="tech-chip">ARCore</span>
+            <span class="tech-chip">Edge AI</span>
+          </div>
+        </section>
+
+      </div>
+      </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p class="footer-copy">&copy; <span id="footer-year"></span> Sidharth Sajith &middot; <a href="https://github.com/siddoit/siddoit.github.io" target="_blank" rel="noopener">Source</a></p>
+      <div class="footer-links">
+        <a href="https://github.com/siddoit" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://www.linkedin.com/in/sidharthsajith/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="../contact.html">Contact</a>
+      </div>
+    </div>
+  </footer>
+  <script src="../script.js"></script>
+</body>
+</html>
+
+

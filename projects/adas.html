@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Autonomous Vehicle Research Platform — cost-effective ADAS using Samsung Galaxy S23 as edge compute. Sidharth Sajith.">
+  <meta name="description" content="Autonomous Vehicle Research Platform — ADAS running on a Galaxy S23 as edge compute instead of a Jetson dev kit. Sidharth Sajith.">
   <meta name="author" content="Sidharth Sajith">
   <title>Autonomous Vehicle Research Platform — Sidharth Sajith</title>
   <link rel="icon" type="image/svg+xml" href="../assets/icons/favicon.svg">
@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="../style.css">
 </head>
 <body>
+
   <nav class="navbar">
     <div class="container">
       <a href="../index.html" class="nav-brand">Sidharth Sajith</a>
@@ -25,70 +26,83 @@
         <a href="../blog.html"     class="nav-link">Blog</a>
         <a href="../cv.html"       class="nav-link">CV</a>
         <a href="../contact.html"  class="nav-link">Contact</a>
-        <button class="theme-btn" id="theme-btn" aria-label="Toggle theme">🌙</button>
+        <button class="theme-btn" id="theme-btn" aria-label="Toggle theme">Theme</button>
       </div>
     </div>
   </nav>
   <div id="reading-progress"></div>
 
-  <main class="page-wrapper">
+  <main class="project-detail">
     <div class="container">
-      <a href="../projects.html" class="project-detail-back">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
-        All Projects
-      </a>
 
-      <div class="project-detail-header fade-in">
-        <h1>Autonomous Vehicle Research Platform</h1>
-        <p>Cost-effective ADAS system using a Samsung Galaxy S23 as the primary edge compute unit.</p>
-        <div class="project-detail-meta">
+      <div class="project-detail-header">
+        <a href="../projects.html" class="back-link">&larr; Back to Projects</a>
+        <div class="project-detail-badges">
           <span class="badge badge-orange">Ongoing</span>
           <span class="badge badge-blue">Edge AI</span>
           <span class="badge badge-blue">Research</span>
         </div>
+        <h1 class="project-detail-title">Autonomous Vehicle Research Platform</h1>
+        <p class="project-detail-subtitle">ADAS running on a $400 Galaxy S23 instead of a $2,000 Jetson dev kit, used as the primary edge compute unit.</p>
+        <div class="project-detail-actions">
+          <a href="https://github.com/siddoit" target="_blank" rel="noopener" class="btn btn-primary">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12"/></svg>
+            View on GitHub
+          </a>
+        </div>
       </div>
 
-      <div class="project-detail-body fade-in">
-        <h2>Overview</h2>
-        <p>
-          This research project explores a cost-effective approach to Advanced Driver Assistance Systems (ADAS)
-          by repurposing a <strong>Samsung Galaxy S23</strong> as the primary edge compute unit for autonomous
-          navigation. The core thesis: capable autonomous navigation doesn't require expensive dedicated hardware
-          — modern flagship smartphones carry NPUs powerful enough for real-time inference.
-        </p>
+      <div class="project-detail-body">
 
-        <h2>What I'm Building</h2>
-        <ul>
-          <li>Quantizing and optimizing YOLO-based object detection models for NPU deployment via <strong>TFLite</strong>, minimizing inference latency on mobile silicon.</li>
-          <li>Developing <strong>synthetic training environments in NVIDIA Isaac Sim</strong> to generate diverse driving scenarios for sim-to-real transfer of driving policies.</li>
-          <li>Architecting sensor fusion pipelines combining the phone's camera and IMU data for robust perception.</li>
-          <li>Evaluating INT8 and FP16 quantization strategies and their accuracy/latency trade-offs on mobile NPUs.</li>
-        </ul>
+        <section class="project-section">
+          <h2>Overview</h2>
+          <p>
+            This research project runs Advanced Driver Assistance Systems (ADAS) on a
+            <strong>Samsung Galaxy S23</strong> as the primary edge compute unit for autonomous navigation.
+            The core thesis: capable autonomous navigation doesn't require a $2,000 Jetson dev kit — a
+            flagship phone's NPU is powerful enough for real-time inference.
+          </p>
+        </section>
 
-        <h2>Technical Highlights</h2>
-        <ul>
-          <li><strong>TFLite Model Quantization</strong> — INT8/FP16 post-training quantization for NPU acceleration</li>
-          <li><strong>NVIDIA Isaac Sim</strong> — Synthetic dataset generation for diverse driving conditions</li>
-          <li><strong>Sim-to-Real Transfer</strong> — Domain randomization techniques to bridge the simulation gap</li>
-          <li><strong>Android Integration</strong> — Camera2 API + IMU sensor fusion on Android</li>
-        </ul>
+        <section class="project-section">
+          <h2>What I'm Building</h2>
+          <p>
+            A heterogeneous edge-AI pipeline for the <strong>Snapdragon 8 Gen 2</strong> platform, distributing
+            perception workloads across GPU, NPU, and CPU. Models move from PyTorch tracing through ONNX
+            conversion and are deployed via <strong>Qualcomm AI Hub</strong>, with INT8/FP16 quantization to
+            keep inference on the NPU.
+          </p>
+        </section>
 
-        <h2>Stack</h2>
-        <p>TFLite · NVIDIA Isaac Sim · Android (Camera2 API) · Python · C++ · OpenCV · YOLO</p>
+        <section class="project-section">
+          <h2>Technical Highlights</h2>
+          <ul>
+            <li><strong>Edge deployment</strong> — static input dimensions, delegate compatibility, and memory/thermal tuning on mobile silicon.</li>
+            <li><strong>NVIDIA Isaac Sim</strong> — synthetic datasets for sim-to-real transfer of driving policies.</li>
+            <li><strong>Sensor fusion</strong> — phone camera and IMU for sub-50ms inference at 30 FPS without CPU fallback.</li>
+            <li><strong>Model tooling</strong> — PyTorch tracing and ONNX conversion for computer-vision models.</li>
+          </ul>
+        </section>
+
+        <section class="project-section">
+          <h2>Tech Stack</h2>
+          <div class="tech-stack-grid">
+            <span class="tech-chip">PyTorch</span>
+            <span class="tech-chip">TFLite</span>
+            <span class="tech-chip">ONNX</span>
+            <span class="tech-chip">Qualcomm AI Hub</span>
+            <span class="tech-chip">Snapdragon 8 Gen 2</span>
+            <span class="tech-chip">NVIDIA Isaac Sim</span>
+            <span class="tech-chip">Android</span>
+          </div>
+        </section>
+
       </div>
-
-      <div class="project-links-section">
-        <a href="https://github.com/siddoit" target="_blank" rel="noopener" class="btn-link btn-primary-link">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12"/></svg>
-          View on GitHub
-        </a>
-      </div>
-    </div>
-  </main>
+      </main>
 
   <footer class="footer">
     <div class="container">
-      <p class="footer-copy">&copy; <span id="footer-year"></span> Sidharth Sajith. All rights reserved.</p>
+      <p class="footer-copy">&copy; <span id="footer-year"></span> Sidharth Sajith &middot; <a href="https://github.com/siddoit/siddoit.github.io" target="_blank" rel="noopener">Source</a></p>
       <div class="footer-links">
         <a href="https://github.com/siddoit" target="_blank" rel="noopener">GitHub</a>
         <a href="https://www.linkedin.com/in/sidharthsajith/" target="_blank" rel="noopener">LinkedIn</a>
@@ -99,3 +113,5 @@
   <script src="../script.js"></script>
 </body>
 </html>
+
+

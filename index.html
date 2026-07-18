@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8">
@@ -31,7 +31,7 @@
         <a href="blog.html"     class="nav-link">Blog</a>
         <a href="cv.html"       class="nav-link">CV</a>
         <a href="contact.html"  class="nav-link">Contact</a>
-        <button class="theme-btn" id="theme-btn" aria-label="Toggle theme">🌙</button>
+        <button class="theme-btn" id="theme-btn" aria-label="Toggle theme">Theme</button>
       </div>
     </div>
   </nav>
@@ -55,8 +55,8 @@
               <strong>AI, Computer Vision, and Embedded Hardware</strong>.
             </p>
             <p>
-              Currently interning at <strong>Innovizta</strong> (AI &amp; IoT) and working on the
-              <strong>ICCC Saintgits Taiwan-India Collaboration</strong> for distributed sensor networks.
+              Currently interning at <strong>Innovizta</strong> (AI &amp; IoT) and <strong>KEL</strong> (robotics R&amp;D),
+              and working on the <strong>ICCC Saintgits Taiwan-India Collaboration</strong> for distributed sensor networks.
               My ongoing research focuses on sim-to-real transfer for autonomous vehicles using NVIDIA Isaac Sim and TFLite-based edge inference.
             </p>
             <p>
@@ -73,31 +73,19 @@
               <div class="label">Projects</div>
             </div>
             <div class="stat-item">
-              <div class="num">2</div>
+              <div class="num">3</div>
               <div class="label">Internships</div>
             </div>
             <div class="stat-item">
-              <div class="num">ROS2</div>
-              <div class="label">+ Isaac Sim</div>
+              <div class="num">7</div>
+              <div class="label">Blog Posts</div>
             </div>
           </div>
 
           <!-- Recent blog posts -->
           <div class="recent-posts">
             <h2>Recent Posts</h2>
-            <div id="recent-posts-list">
-              <div class="blog-empty">
-                <div class="emoji">✍️</div>
-                <h3>Blog coming soon</h3>
-                <p>I'll be sharing my progress and learnings here soon.</p>
-              </div>
-            </div>
-            <!-- Uncomment when you have posts:
-            <a href="blog/my-first-post.html" class="post-item">
-              <span class="post-date">2026-06-15</span>
-              <span class="post-title">Getting started with ROS 2 Navigation Stack</span>
-            </a>
-            -->
+            <div id="recent-posts-list"></div>
           </div>
         </div>
 
@@ -105,8 +93,8 @@
         <aside>
           <div class="profile-card">
             <div class="profile-photo">
-              <img src="assets/images/profile.jpg"
-                   onerror="this.src='assets/icons/profile-placeholder.svg'"
+              <img src="assets/images/profile-img.png"
+                   onerror="this.onerror=null; this.src='assets/icons/profile-placeholder.svg';"
                    alt="Sidharth Sajith"
                    width="180" height="180">
             </div>
@@ -146,9 +134,7 @@
   <footer class="footer">
     <div class="container">
       <p class="footer-copy">
-        &copy; <span id="footer-year"></span> Sidharth Sajith.
-        Built with HTML, CSS &amp; JavaScript.
-        <a href="https://github.com/siddoit/portfolio" target="_blank" rel="noopener">Source</a>.
+        &copy; <span id="footer-year"></span> Sidharth Sajith &middot; <a href="https://github.com/siddoit/siddoit.github.io" target="_blank" rel="noopener">Source</a>
       </p>
       <div class="footer-links">
         <a href="https://github.com/siddoit" target="_blank" rel="noopener">GitHub</a>
@@ -158,6 +144,9 @@
     </div>
   </footer>
 
+  <script src="assets/js/posts.js"></script>
+  <script src="assets/js/blog.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
+

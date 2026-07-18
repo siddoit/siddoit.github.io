@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8">
@@ -26,7 +26,7 @@
         <a href="blog.html"     class="nav-link">Blog</a>
         <a href="cv.html"       class="nav-link">CV</a>
         <a href="contact.html"  class="nav-link">Contact</a>
-        <button class="theme-btn" id="theme-btn" aria-label="Toggle theme">🌙</button>
+        <button class="theme-btn" id="theme-btn" aria-label="Toggle theme">Theme</button>
       </div>
     </div>
   </nav>
@@ -40,33 +40,8 @@
         <p>Progress, learnings, and thoughts on robotics, AI, and embedded systems.</p>
       </header>
 
-      <div class="blog-list fade-in">
-
-        <!-- ===== ADD NEW POSTS HERE ===== -->
-        <!-- Copy the block below and fill in your post details.
-             Create a corresponding HTML file in the blog/ folder.
-
-        <a href="blog/your-post-slug.html" class="blog-post-item">
-          <div class="blog-post-meta-row">
-            <span class="blog-date">2026-07-01</span>
-            <span class="badge badge-blue">Robotics</span>
-          </div>
-          <div class="blog-post-title">Your Post Title Here</div>
-          <p class="blog-post-excerpt">A short excerpt or description of what the post is about. Keep it to 2 lines max.</p>
-        </a>
-
-        -->
-
-        <!-- Empty state — remove this when you have posts -->
-        <div class="blog-empty">
-          <div class="emoji">✍️</div>
-          <h3>Posts coming soon</h3>
-          <p>
-            I'll be writing about my progress and learnings in robotics, AI, and embedded systems.
-            <br>Stay tuned.
-          </p>
-        </div>
-
+      <div class="blog-list fade-in" id="blog-list">
+        <!-- Posts render here automatically from assets/js/posts.js -->
       </div>
     </div>
   </main>
@@ -74,7 +49,7 @@
   <footer class="footer">
     <div class="container">
       <p class="footer-copy">
-        &copy; <span id="footer-year"></span> Sidharth Sajith. All rights reserved.
+        &copy; <span id="footer-year"></span> Sidharth Sajith &middot; <a href="https://github.com/siddoit/siddoit.github.io" target="_blank" rel="noopener">Source</a>
       </p>
       <div class="footer-links">
         <a href="https://github.com/siddoit" target="_blank" rel="noopener">GitHub</a>
@@ -84,6 +59,9 @@
     </div>
   </footer>
 
+  <script src="assets/js/posts.js"></script>
+  <script src="assets/js/blog.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
+

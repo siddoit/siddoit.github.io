@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8">
@@ -27,7 +27,7 @@
         <a href="blog.html"     class="nav-link">Blog</a>
         <a href="cv.html"       class="nav-link">CV</a>
         <a href="contact.html"  class="nav-link">Contact</a>
-        <button class="theme-btn" id="theme-btn" aria-label="Toggle theme">🌙</button>
+        <button class="theme-btn" id="theme-btn" aria-label="Toggle theme">Theme</button>
       </div>
     </div>
   </nav>
@@ -60,12 +60,62 @@
             <h3>Autonomous Vehicle Research Platform</h3>
             <span class="badge badge-orange">Ongoing</span>
           </div>
-          <p>Cost-effective ADAS system using a Samsung Galaxy S23 as edge compute. Quantized object detection models for NPU via TFLite and synthetic training environments in NVIDIA Isaac Sim.</p>
+          <p>ADAS running on a $400 Galaxy S23 instead of a $2,000 Jetson dev kit. Quantized object detection models for NPU via TFLite and synthetic training environments in NVIDIA Isaac Sim.</p>
           <div class="project-tags">
             <span class="project-tag">TFLite</span>
             <span class="project-tag">Isaac Sim</span>
             <span class="project-tag">Android</span>
             <span class="project-tag">Edge AI</span>
+          </div>
+        </a>
+
+        <!-- Project 2: Embodied Semantic Asset Recall -->
+        <a href="projects/asset-recall.html" class="project-card">
+          <div class="project-card-header">
+            <div class="project-card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M12 2a10 10 0 1 0 10 10"/><path d="M12 6v6l4 2"/>
+              </svg>
+            </div>
+            <svg class="project-card-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M7 17L17 7M17 7H7M17 7v10"/>
+            </svg>
+          </div>
+          <div>
+            <h3>Embodied Semantic Asset Recall Robot</h3>
+            <span class="badge badge-orange">Ongoing</span>
+          </div>
+          <p>Fully offline autonomous mobile robot that finds objects from natural-language queries, using Jetson Orin Nano, ROS 2, and vision-language models — no cloud, LiDAR, or depth camera.</p>
+          <div class="project-tags">
+            <span class="project-tag">ROS 2</span>
+            <span class="project-tag">Jetson</span>
+            <span class="project-tag">VLM</span>
+            <span class="project-tag">Edge AI</span>
+          </div>
+        </a>
+
+        <!-- Project 3: EduBot -->
+        <a href="projects/edubot.html" class="project-card">
+          <div class="project-card-header">
+            <div class="project-card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <rect x="4" y="8" width="16" height="12" rx="2"/><path d="M12 8V4M9 2h6"/><circle cx="12" cy="14" r="2"/>
+              </svg>
+            </div>
+            <svg class="project-card-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M7 17L17 7M17 7H7M17 7v10"/>
+            </svg>
+          </div>
+          <div>
+            <h3>EduBot — Interactive Educational Robot</h3>
+            <span class="badge badge-green">Jun 2026</span>
+          </div>
+          <p>AI-powered educational robot on Raspberry Pi 5 with an LLM, speech AI, and AWS Rekognition, built for bilingual English and Malayalam primary-school learning.</p>
+          <div class="project-tags">
+            <span class="project-tag">Raspberry Pi</span>
+            <span class="project-tag">LLM</span>
+            <span class="project-tag">Speech AI</span>
+            <span class="project-tag">AWS</span>
           </div>
         </a>
 
@@ -204,7 +254,7 @@
   <footer class="footer">
     <div class="container">
       <p class="footer-copy">
-        &copy; <span id="footer-year"></span> Sidharth Sajith. All rights reserved.
+        &copy; <span id="footer-year"></span> Sidharth Sajith &middot; <a href="https://github.com/siddoit/siddoit.github.io" target="_blank" rel="noopener">Source</a>
       </p>
       <div class="footer-links">
         <a href="https://github.com/siddoit" target="_blank" rel="noopener">GitHub</a>
@@ -217,3 +267,4 @@
   <script src="script.js"></script>
 </body>
 </html>
+

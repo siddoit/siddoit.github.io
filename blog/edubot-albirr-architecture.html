@@ -1,0 +1,122 @@
+﻿<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="The story of Albirr: a Raspberry Pi 5 robot that tracks your face, greets you in Malayalam, and talks without ever making you look at a screen.">
+  <meta name="author" content="Sidharth Sajith">
+  <title>Meet Albirr, the Robot That Remembers Your Face — Sidharth Sajith</title>
+  <link rel="icon" type="image/svg+xml" href="../assets/icons/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="container">
+      <a href="../index.html" class="nav-brand">Sidharth Sajith</a>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="nav-links" id="nav-links">
+        <a href="../index.html"    class="nav-link">About</a>
+        <a href="../projects.html" class="nav-link">Projects</a>
+        <a href="../blog.html"     class="nav-link active">Blog</a>
+        <a href="../cv.html"       class="nav-link">CV</a>
+        <a href="../contact.html"  class="nav-link">Contact</a>
+        <button class="theme-btn" id="theme-btn" aria-label="Toggle theme">Theme</button>
+      </div>
+    </div>
+  </nav>
+  <div id="reading-progress"></div>
+
+  <main class="page-wrapper">
+    <div class="container">
+
+      <a href="../blog.html" class="project-detail-back">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+        All Posts
+      </a>
+
+      <header class="post-header fade-in">
+        <h1>Meet Albirr, the Robot That Remembers Your Face</h1>
+        <div class="post-meta">
+          <span>Published: June 18, 2026</span>
+          <span>·</span>
+          <span>Robotics</span>
+        </div>
+      </header>
+
+      <article class="post-body fade-in">
+        <p class="lead">
+          Most "AI robots" are a speaker with a chatbot behind it. Albirr is different: it watches who walks in,
+          knows the difference between you and a stranger, and says hello in your language — all on a Raspberry
+          Pi 5, with no cloud round-trip slowing it down.
+        </p>
+
+        <p>
+          The hard part was never the talking. It was keeping a robot calm while it does three things at once:
+          see, listen, and speak. Early versions froze the camera the moment the voice engine woke up. So the
+          whole system was rebuilt around one rule — nothing blocks anything else.
+        </p>
+
+        <h2>Seeing without lag</h2>
+        <p>
+          A background thread constantly drains the camera buffer, so Albirr is always looking at the freshest
+          frame, never a stale one from half a second ago. Faces are found with YuNet and recognized with SFace,
+          and a Kalman filter plus the Hungarian algorithm keep track of who's who even as people move and
+          overlap. The neat trick is identity protection: if a new person steps into a spot someone else was
+          using, the old tracking memory is wiped instantly. No more "ghost" of the previous person haunting the
+          new one.
+        </p>
+
+        <h2>Speaking without thinking (too hard)</h2>
+        <p>
+          If Albirr already knows you, it skips the language model entirely and fires a greeting straight to the
+          speakers — "Assalamu Alaikum" — fast enough that it feels like a person noticing you. For everyone
+          else, a tiered check runs: a local face cache first, then a quick async lookup in the cloud. Voice
+          itself is generated to a RAM disk and played from there, which shaved the "thinking" pause down to
+          almost nothing. Getting Malayalam to sound natural took tuning the voice's speed and pitch until the
+          syllables stopped sounding robotic.
+        </p>
+
+        <h2>A robot that talks like a five-year-old</h2>
+        <p>
+          The personality lives in a single locked-down system prompt. Albirr is told to be concise, to mix in
+          everyday Manglish ("Sheri aanu", "Nokkoo"), and to answer in one sentence. The point wasn't to show off
+          a giant model — it was to make a tool a child would actually sit with. That constraint, more than any
+          model choice, is what makes it feel like a tutor rather than a search box.
+        </p>
+
+        <h2>Why it's interesting</h2>
+        <p>
+          Albirr is a small demonstration of a bigger idea: useful robots don't need a data center, they need
+          good plumbing. Separate the streams, protect identities, and let the cloud be a fallback instead of a
+          crutch. Build it that way and a $50 board starts to feel alive.
+        </p>
+
+        <hr>
+        <p class="text-muted">
+
+          If you found this useful, feel free to <a href="../contact.html">reach out</a>.
+        </p>
+      </article>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p class="footer-copy">&copy; <span id="footer-year"></span> Sidharth Sajith &middot; <a href="https://github.com/siddoit/siddoit.github.io" target="_blank" rel="noopener">Source</a></p>
+      <div class="footer-links">
+        <a href="https://github.com/siddoit" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://www.linkedin.com/in/sidharthsajith/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="../contact.html">Contact</a>
+      </div>
+    </div>
+  </footer>
+  <script src="../script.js"></script>
+</body>
+</html>

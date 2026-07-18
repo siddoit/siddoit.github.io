@@ -1,0 +1,129 @@
+﻿<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="How a $400 phone learned to drive: the story of splitting autonomous-driving workloads across a Snapdragon 8 Gen 2's GPU, NPU, and CPU.">
+  <meta name="author" content="Sidharth Sajith">
+  <title>How a $400 Phone Learned to Drive — Sidharth Sajith</title>
+  <link rel="icon" type="image/svg+xml" href="../assets/icons/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="container">
+      <a href="../index.html" class="nav-brand">Sidharth Sajith</a>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="nav-links" id="nav-links">
+        <a href="../index.html"    class="nav-link">About</a>
+        <a href="../projects.html" class="nav-link">Projects</a>
+        <a href="../blog.html"     class="nav-link active">Blog</a>
+        <a href="../cv.html"       class="nav-link">CV</a>
+        <a href="../contact.html"  class="nav-link">Contact</a>
+        <button class="theme-btn" id="theme-btn" aria-label="Toggle theme">Theme</button>
+      </div>
+    </div>
+  </nav>
+  <div id="reading-progress"></div>
+
+  <main class="page-wrapper">
+    <div class="container">
+
+      <a href="../blog.html" class="project-detail-back">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+        All Posts
+      </a>
+
+      <header class="post-header fade-in">
+        <h1>How a $400 Phone Learned to Drive</h1>
+        <div class="post-meta">
+          <span>Published: July 10, 2026</span>
+          <span>·</span>
+          <span>Edge AI</span>
+        </div>
+      </header>
+
+      <article class="post-body fade-in">
+        <p class="lead">
+          Everyone says you need a $2,000 compute box to make a car drive itself. I wanted to find out what
+          happens if you hand the job to the phone already in your pocket — a Galaxy S23, with a chip designed
+          for TikTok, not Teslas.
+        </p>
+
+        <p>
+          The first attempt was humbling. I lined up the models the way you would on a laptop: run them one
+          after another and hope for the best. On a phone, that hope evaporates fast. The chip got hot, the
+          system bus clogged, and the whole rover eventually just gave up. The lesson was obvious — a
+          Snapdragon isn't one computer, it's three, and treating it like one is why edge AI projects die.
+        </p>
+
+        <h2>Three brains, one car</h2>
+        <p>
+          The Snapdragon 8 Gen 2 has a GPU, an NPU, and a CPU, each good at very different things. So I stopped
+          asking one of them to do everything and gave each a role it's built for:
+        </p>
+        <ul>
+          <li>The <strong>GPU</strong> draws the road — dense lane segmentation with Fast-SCNN, computing the curves the car should follow.</li>
+          <li>The <strong>NPU</strong> spots the things — high-speed object detection with YOLO and RT-DETR.</li>
+          <li>The <strong>CPU</strong> keeps time — syncing the camera and crunching the steering math dozens of times a second.</li>
+        </ul>
+        <p>
+          Split that way, the same workloads that crashed the rover now run cool and steady. It's less "smarter
+          model" and more "stop making the wrong silicon do the wrong job."
+        </p>
+
+        <h2>The transformer that wouldn't compile</h2>
+        <p>
+          Detection transformers like RT-DETR are elegant on a server and hostile on a phone. Their shapes shift
+          mid-flight, and mobile compilers simply refuse to process them. The fix was unglamorous: I wrote a
+          tracing script that froze the dimensions, pinned the attention queries, and flattened the model down
+          to operators the hardware actually understands. Vision transformers aren't impossible on edge — they're
+          just demanding to be translated first.
+        </p>
+
+        <h2>Letting the compiler do the yelling</h2>
+        <p>
+          Getting models onto the phone meant handing them to Qualcomm's AI Hub, which compiles them into tidy
+          <code>.tflite</code> binaries. The interesting part was the errors. One warned that float16 "isn't
+          supported" — except it is, as long as the model boundary stays float32 and the runtime downcasts
+          later. Another complained about the NPU, which turned out to be a normal execution path, not a failure.
+          Most "crashes" I chased were actually just Java memory habits on the Android side. Once I could tell
+          the difference between a real error and compiler theater, the system stabilized.
+        </p>
+
+        <h2>Why this matters</h2>
+        <p>
+          A self-driving stack that fits in a phone isn't a party trick. It's a signal that autonomous perception
+          doesn't have to be locked behind expensive hardware — that a student with a dev phone and patience can
+          build the same pipeline the big labs do, just smaller. That's the part I find worth writing down.
+        </p>
+
+        <hr>
+        <p class="text-muted">
+
+          If you found this useful, feel free to <a href="../contact.html">reach out</a>.
+        </p>
+      </article>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p class="footer-copy">&copy; <span id="footer-year"></span> Sidharth Sajith &middot; <a href="https://github.com/siddoit/siddoit.github.io" target="_blank" rel="noopener">Source</a></p>
+      <div class="footer-links">
+        <a href="https://github.com/siddoit" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://www.linkedin.com/in/sidharthsajith/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="../contact.html">Contact</a>
+      </div>
+    </div>
+  </footer>
+  <script src="../script.js"></script>
+</body>
+</html>

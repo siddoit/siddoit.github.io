@@ -1,0 +1,127 @@
+﻿<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Why a plant doctor needs a bouncer: the story of a disease-detection system that knows the difference between a sick leaf and a steering wheel.">
+  <meta name="author" content="Sidharth Sajith">
+  <title>The Plant Doctor With a Bouncer at the Door — Sidharth Sajith</title>
+  <link rel="icon" type="image/svg+xml" href="../assets/icons/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="container">
+      <a href="../index.html" class="nav-brand">Sidharth Sajith</a>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="nav-links" id="nav-links">
+        <a href="../index.html"    class="nav-link">About</a>
+        <a href="../projects.html" class="nav-link">Projects</a>
+        <a href="../blog.html"     class="nav-link active">Blog</a>
+        <a href="../cv.html"       class="nav-link">CV</a>
+        <a href="../contact.html"  class="nav-link">Contact</a>
+        <button class="theme-btn" id="theme-btn" aria-label="Toggle theme">Theme</button>
+      </div>
+    </div>
+  </nav>
+  <div id="reading-progress"></div>
+
+  <main class="page-wrapper">
+    <div class="container">
+
+      <a href="../blog.html" class="project-detail-back">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+        All Posts
+      </a>
+
+      <header class="post-header fade-in">
+        <h1>The Plant Doctor With a Bouncer at the Door</h1>
+        <div class="post-meta">
+          <span>Published: March 12, 2026</span>
+          <span>·</span>
+          <span>Computer Vision</span>
+        </div>
+      </header>
+
+      <article class="post-body fade-in">
+        <p class="lead">
+          Train a model to spot diseased leaves and it will, with total confidence, diagnose your car's
+          steering wheel as powdery mildew. The funny failure turned out to be the most useful lesson in the
+          whole project.
+        </p>
+
+        <p>
+          The first version was a small TensorFlow model, <code>PeaDetect</code>, that knew four states of a pea
+          plant. It worked — until it didn't. Because it had to pick <em>something</em> every time, it spread its
+          confidence across the four classes and called anything unfamiliar a disease. That's the closed-world
+          trap: a model that only knows plants assumes everything is a plant.
+        </p>
+
+        <h2>Hire a bouncer</h2>
+        <p>
+          The fix was to stop trusting the doctor and add a bouncer. Before any diagnosis, a fast vision model in
+          the cloud (Groq's Llama vision) takes one look and asks the only question that matters: "is this even a
+          plant?" If not, the system stops there and tells you plainly. No fake medical report for your laptop.
+        </p>
+
+        <h2>When the doctor isn't sure</h2>
+        <p>
+          If the local model is hesitant — below 60% confidence — the image gets a second opinion from Google
+          Gemini, which returns a clean, structured answer: the disease, its status, and three things you can do
+          about it. Picking the right model took real digging: I hit Gemini's rate limits and a deprecated SDK,
+          and even stood up a local model via Ollama so the whole thing could run with no internet at all. Every
+          route got tested before one earned the job.
+        </p>
+
+        <h2>A web app that talks back</h2>
+        <p>
+          All of this sits behind a Flask server with a phone-friendly interface. The screen shifts green when a
+          plant is healthy, red when it's not, grey when it's "not a plant." You can tap buttons or just say
+          "Capture" and "Diagnose" — the browser's speech engine handles it, and reads the result back to you so
+          you don't have to squint at a screen in the field.
+        </p>
+
+        <h2>And it waters the plant</h2>
+        <p>
+          The last piece is physical. An ESP32 reads soil moisture and temperature, and a relay switches a pump
+          on and off. The trickiest bug there was input lag, solved by ditching blocking <code>delay()</code>
+          calls for a non-blocking timer so the board could listen and sense at the same time. A small serial
+          bridge lets a button on the web page literally turn the water on.
+        </p>
+
+        <h2>Why it's interesting</h2>
+        <p>
+          The headline isn't "AI detects disease." It's that a reliable system is mostly about knowing what your
+          model <em>can't</em> do, and building guardrails for exactly that. A bouncer, a fallback, and a pump —
+          that's what turns a demo into something you'd actually use in a garden.
+        </p>
+
+        <hr>
+        <p class="text-muted">
+
+          If you found this useful, feel free to <a href="../contact.html">reach out</a>.
+        </p>
+      </article>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p class="footer-copy">&copy; <span id="footer-year"></span> Sidharth Sajith &middot; <a href="https://github.com/siddoit/siddoit.github.io" target="_blank" rel="noopener">Source</a></p>
+      <div class="footer-links">
+        <a href="https://github.com/siddoit" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://www.linkedin.com/in/sidharthsajith/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="../contact.html">Contact</a>
+      </div>
+    </div>
+  </footer>
+  <script src="../script.js"></script>
+</body>
+</html>
