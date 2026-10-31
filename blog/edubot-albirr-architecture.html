@@ -1,6 +1,13 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-KFKM3L39"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  </script>
   <meta charset="UTF-8">
   <script>
     (function() {
@@ -68,21 +75,26 @@
         </div>
       </header>
 
-      <div class="project-callout">
-        <span class="callout-icon" aria-hidden="true">🛠️</span>
-        <div class="callout-content">
-          <strong>Companion Project:</strong>
-          <span>Explore the mechanical design, dual-screen interface, and ESP32 motor subsystem in the </span>
-          <a href="../projects/edubot.html">EduBot Albirr AI Teaching Assistant Project Detail &rarr;</a>
-        </div>
-      </div>
-
       <article class="post-body fade-in">
         <p class="lead">
           Most "AI robots" are a speaker with a chatbot behind it. Albirr is different: it watches who walks in,
           knows the difference between you and a stranger, and says hello in your language — all on a Raspberry
           Pi 5, with no cloud round-trip slowing it down.
         </p>
+
+        <!-- Companion Engineering Project Cross-Link -->
+        <a href="../projects/edubot.html" class="companion-project-box">
+          <div class="companion-project-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="8" width="16" height="12" rx="2"/><path d="M12 8V4M9 2h6"/><circle cx="12" cy="14" r="2"/></svg>
+          </div>
+          <div class="companion-project-content">
+            <span class="companion-project-eyebrow">Companion Engineering Project</span>
+            <span class="companion-project-title">EduBot — Interactive Educational Robot &rarr;</span>
+            <p class="companion-project-desc">Explore the physical chassis build, dual-screen interface, and ESP32 motor subsystem.</p>
+          </div>
+          <div class="companion-project-arrow" aria-hidden="true">&rarr;</div>
+        </a>
+
 
         <p>
           The hard part was never the talking. It was keeping a robot calm while it does three things at once:

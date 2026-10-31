@@ -1,6 +1,13 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-KFKM3L39"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  </script>
   <meta charset="UTF-8">
   <script>
     (function() {
@@ -68,21 +75,26 @@
         </div>
       </header>
 
-      <div class="project-callout">
-        <span class="callout-icon" aria-hidden="true">🛠️</span>
-        <div class="callout-content">
-          <strong>Companion Project:</strong>
-          <span>Explore the complete system architecture, hardware schematics, and live benchmark results in the </span>
-          <a href="../projects/adas.html">Autonomous Mobile Robot (ADAS) Project Detail &rarr;</a>
-        </div>
-      </div>
-
       <article class="post-body fade-in">
         <p class="lead">
           Everyone says you need a $2,000 compute box to make a car drive itself. I wanted to find out what
           happens if you hand the job to the phone already in your pocket — a Galaxy S23, with a chip designed
           for TikTok, not Teslas.
         </p>
+
+        <!-- Companion Engineering Project Cross-Link -->
+        <a href="../projects/adas.html" class="companion-project-box">
+          <div class="companion-project-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+          </div>
+          <div class="companion-project-content">
+            <span class="companion-project-eyebrow">Companion Engineering Project</span>
+            <span class="companion-project-title">Autonomous Vehicle Research Platform (ADAS) &rarr;</span>
+            <p class="companion-project-desc">Explore the complete system architecture, hardware schematics, NPU benchmarks, and Isaac Sim synthetic dataset pipeline.</p>
+          </div>
+          <div class="companion-project-arrow" aria-hidden="true">&rarr;</div>
+        </a>
+
 
         <p>
           The first attempt was humbling. I lined up the models the way you would on a laptop: run them one

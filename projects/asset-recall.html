@@ -1,6 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-KFKM3L39"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Embodied Semantic Asset Recall Robot — Sidharth Sajith</title>
@@ -78,16 +85,6 @@
         </div>
       </div>
 
-      <!-- Companion Engineering Story Cross-Link -->
-      <a href="../blog/embodied-asset-recall-robot.html" class="companion-story-box">
-        <div class="companion-story-content">
-          <span class="companion-story-eyebrow">Engineering Deep Dive</span>
-          <span class="companion-story-title">A Robot That Remembers Where You Left Your Wrench &rarr;</span>
-          <p class="companion-story-desc">No cloud, no LiDAR, no RFID — just a Jetson, some VLMs, and a stubborn belief that robots should find your stuff offline.</p>
-        </div>
-        <div class="companion-story-arrow" aria-hidden="true">&rarr;</div>
-      </a>
-
       <div class="project-detail-body">
 
         <section class="project-section">
@@ -99,6 +96,21 @@
             ARCore-based visual-inertial odometry. No cloud, no LiDAR, no dedicated depth camera.
           </p>
         </section>
+
+        <!-- Companion Engineering Story Cross-Link -->
+        <a href="../blog/embodied-asset-recall-robot.html" class="companion-story-box">
+          <div class="companion-story-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/>
+            </svg>
+          </div>
+          <div class="companion-story-content">
+            <span class="companion-story-eyebrow">Engineering Deep Dive</span>
+            <span class="companion-story-title">A Robot That Remembers Where You Left Your Wrench &rarr;</span>
+            <p class="companion-story-desc">Read about building an offline embodied asset recall robot with Jetson Orin Nano, ROS 2, and vision-language models.</p>
+          </div>
+          <div class="companion-story-arrow" aria-hidden="true">&rarr;</div>
+        </a>
 
         <section class="project-section">
           <h2>Semantic Memory</h2>

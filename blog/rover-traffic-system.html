@@ -1,6 +1,13 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-KFKM3L39"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  </script>
   <meta charset="UTF-8">
   <script>
     (function() {
@@ -91,7 +98,7 @@
         <h2>Then the memory wars</h2>
         <p>
           Then came the VRAM reality check. "Illegal instruction" errors, memory overflows, the usual. We had to
-          babysit batch sizes to keep VRAM in a tight 5â€“7 GB pocket — too high and it bleeds into system RAM and
+          babysit batch sizes to keep VRAM in a tight 5–7 GB pocket — too high and it bleeds into system RAM and
           dies, too low and training crawls. Windows was also choking on background plotting, so we yanked all
           the visual plotting and locked down CPU workers to stop the GPU from panicking.
         </p>
@@ -102,7 +109,7 @@
         </p>
         <p>
           With the system finally stable, we let it run. Forty epochs, three and a half hours, GPU pinned at 100%,
-          sitting at a calm 74Â°C. That's the part that looks good in a screenshot.
+          sitting at a calm 74°C. That's the part that looks good in a screenshot.
         </p>
 
         <h2>Finally, the export boss fight</h2>

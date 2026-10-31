@@ -1,6 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-KFKM3L39"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sidharth Sajith — Robotics &amp; Automation Engineer</title>
@@ -83,53 +90,177 @@
   <!-- MAIN -->
   <main class="page-wrapper" id="main">
     <div class="container">
-      <div class="home-layout fade-in">
 
-        <!-- LEFT: Bio -->
-        <div class="home-intro">
-          <h1>Sidharth Sajith</h1>
-          <p class="subtitle">Robotics &amp; Automation Engineer</p>
+      <!-- HERO SECTION -->
+      <section class="hero-section fade-in" aria-label="Introduction">
+        <div class="hero-layout">
 
-          <div class="home-bio">
-            <p>
-              Hi! I'm a B.Tech Robotics &amp; Automation student at
-              <a href="https://www.saintgits.org" target="_blank" rel="noopener">Saintgits College of Engineering</a>,
-              Kottayam. I build intelligent systems at the intersection of
-              <strong>AI, Computer Vision, and Embedded Hardware</strong>.
-            </p>
-            <p>
-              Currently interning at <strong>Innovizta</strong> (AI &amp; IoT) and <strong>KEL</strong> (robotics R&amp;D),
-              and working on the <strong>ICCC Saintgits Taiwan-India Collaboration</strong> for distributed sensor networks.
-              My ongoing research focuses on sim-to-real transfer for autonomous vehicles using NVIDIA Isaac Sim and TFLite-based edge inference.
-            </p>
-            <p>
-              I'm passionate about making robotics practical and deployable — from writing
-              ROS 2 navigation stacks to flashing firmware on ESP32s. When I'm not building things,
-              I write about my learning journey on the <a href="blog.html">blog</a>.
-            </p>
-          </div>
-
-          <!-- Quick stats -->
-          <div class="quick-stats">
-            <div class="stat-item">
-              <div class="num">8</div>
-              <div class="label">Projects</div>
+          <!-- Profile Portrait & Location -->
+          <div class="hero-avatar-wrapper">
+            <div class="hero-avatar">
+              <img src="assets/images/pic2.jpeg"
+                   onerror="this.onerror=null; this.src='assets/icons/profile-placeholder.svg';"
+                   alt="Sidharth Sajith - Robotics &amp; Automation Engineer"
+                   width="150" height="150">
             </div>
-            <div class="stat-item">
-              <div class="num">3</div>
-              <div class="label">Internships</div>
-            </div>
-            <div class="stat-item">
-              <div class="num">7</div>
-              <div class="label">Blog Posts</div>
+            <div class="hero-location">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span>Kottayam, Kerala, India</span>
             </div>
           </div>
 
-          <!-- Recent blog posts -->
-          <div class="recent-posts">
-            <h2>Recent Posts</h2>
-            <div id="recent-posts-list">
-            <!-- RECENT_POSTS_START -->
+          <!-- Identity & Primary Actions -->
+          <div class="hero-content">
+            <div class="hero-eyebrow">Robotics &amp; Automation Engineer</div>
+            <h1 class="hero-title">Sidharth Sajith</h1>
+            <p class="hero-lead">
+              Building robotics and autonomous systems at the intersection of <strong>AI, Computer Vision, and Embedded Hardware</strong>.
+              B.Tech student at <a href="https://www.saintgits.org" target="_blank" rel="noopener">Saintgits College of Engineering</a>, working with ROS 2 and edge devices.
+            </p>
+
+            <!-- Primary Action Buttons -->
+            <div class="hero-actions">
+              <a href="projects.html" class="btn btn-primary">
+                View Projects
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+              </a>
+              <a href="assets/resume/Sidharth_Sajith_Resume.pdf" download="Sidharth_Sajith_Resume.pdf" target="_blank" rel="noopener" class="btn btn-outline">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                Download CV (PDF)
+              </a>
+              <a href="contact.html" class="btn btn-ghost">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                Contact
+              </a>
+            </div>
+
+            <!-- Social Links Row -->
+            <div class="hero-social-row">
+              <a href="https://github.com/siddoit" target="_blank" rel="noopener" class="social-chip" aria-label="GitHub">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12"/></svg>
+                <span>GitHub</span>
+              </a>
+              <a href="https://www.linkedin.com/in/sidharthsajith/" target="_blank" rel="noopener" class="social-chip" aria-label="LinkedIn">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                <span>LinkedIn</span>
+              </a>
+              <a href="mailto:sidharthsajith005@gmail.com" class="social-chip" aria-label="Email">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                <span>Email</span>
+              </a>
+              <a href="cv.html" class="social-chip" aria-label="Curriculum Vitae">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                <span>CV Page</span>
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- QUICK STATS -->
+      <div class="quick-stats fade-in">
+        <div class="stat-item">
+          <div class="num">8</div>
+          <div class="label">Projects</div>
+        </div>
+        <div class="stat-item">
+          <div class="num">4</div>
+          <div class="label">Internships</div>
+        </div>
+        <div class="stat-item">
+          <div class="num">7</div>
+          <div class="label">Articles</div>
+        </div>
+      </div>
+
+      <!-- ABOUT & FOCUS -->
+      <section class="home-section fade-in" aria-label="About and Background">
+        <div class="section-header-row">
+          <h2>About &amp; Focus</h2>
+        </div>
+        <div class="home-bio">
+          <p>
+            I'm currently interning at <strong>Zitto Motors</strong> and working on robotics projects with <strong>KEL</strong>, alongside the <strong>ICCC Saintgits Taiwan-India Collaboration</strong> for sensor networks. Most of my work focuses on autonomous vehicles, computer vision, and running AI models efficiently on edge hardware.
+          </p>
+          <p>
+            I enjoy building practical systems — from working with ROS 2 and navigation stacks to flashing firmware on microcontrollers. Outside the lab, I write about what I build and learn on my <a href="blog.html">blog</a>.
+          </p>
+        </div>
+      </section>
+
+      <!-- FEATURED WORK -->
+      <section class="home-section fade-in" aria-label="Featured Projects">
+        <div class="section-header-row">
+          <h2>Featured Work</h2>
+          <a href="projects.html" class="section-more-link">
+            All 8 Projects &rarr;
+          </a>
+        </div>
+        <div class="featured-projects-grid">
+          <!-- Featured Project 1: ADAS -->
+          <a href="projects/adas.html" class="project-card">
+            <div class="project-card-header">
+              <div class="project-card-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/>
+                </svg>
+              </div>
+              <svg class="project-card-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M7 17L17 7M17 7H7M17 7v10"/>
+              </svg>
+            </div>
+            <div class="project-card-title-group">
+              <h3>Autonomous Vehicle Research Platform</h3>
+              <span class="badge badge-orange">Ongoing</span>
+            </div>
+            <p>ADAS running on a $400 Galaxy S23 instead of a $2,000 Jetson dev kit. Quantized object detection models for NPU via TFLite and synthetic training environments in NVIDIA Isaac Sim.</p>
+            <div class="project-tags">
+              <span class="project-tag">TFLite</span>
+              <span class="project-tag">Isaac Sim</span>
+              <span class="project-tag">Android</span>
+              <span class="project-tag">Edge AI</span>
+            </div>
+          </a>
+
+          <!-- Featured Project 2: Asset Recall -->
+          <a href="projects/asset-recall.html" class="project-card">
+            <div class="project-card-header">
+              <div class="project-card-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path d="M12 2a10 10 0 1 0 10 10"/><path d="M12 6v6l4 2"/>
+                </svg>
+              </div>
+              <svg class="project-card-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M7 17L17 7M17 7H7M17 7v10"/>
+              </svg>
+            </div>
+            <div class="project-card-title-group">
+              <h3>Embodied Semantic Asset Recall Robot</h3>
+              <span class="badge badge-orange">Ongoing</span>
+            </div>
+            <p>Fully offline autonomous mobile robot that finds objects from natural-language queries, using Jetson Orin Nano, ROS 2, and vision-language models — no cloud, LiDAR, or depth camera.</p>
+            <div class="project-tags">
+              <span class="project-tag">ROS 2</span>
+              <span class="project-tag">Jetson</span>
+              <span class="project-tag">VLM</span>
+              <span class="project-tag">Edge AI</span>
+            </div>
+          </a>
+        </div>
+      </section>
+
+      <!-- RECENT BLOG POSTS -->
+      <section class="home-section fade-in" aria-label="Recent Articles">
+        <div class="section-header-row">
+          <h2>Recent Writing</h2>
+          <a href="blog.html" class="section-more-link">
+            All 7 Posts &rarr;
+          </a>
+        </div>
+        <div class="recent-posts">
+          <div id="recent-posts-list">
+          <!-- RECENT_POSTS_START -->
     <a href="blog/embodied-asset-recall-robot.html" class="post-item">
       <span class="post-date">Jul 18, 2026</span>
       <span class="post-title">A Robot That Remembers Where You Left Your Wrench</span>
@@ -143,56 +274,10 @@
       <span class="post-title">How a $400 Phone Learned to Drive</span>
     </a>
             <!-- RECENT_POSTS_END -->
-            </div>
           </div>
         </div>
+      </section>
 
-        <!-- RIGHT: Profile card -->
-        <aside>
-          <div class="profile-card">
-            <div class="profile-photo">
-              <img src="assets/images/pic2.jpeg"
-                   onerror="this.onerror=null; this.src='assets/icons/profile-placeholder.svg';"
-                   alt="Sidharth Sajith - Robotics &amp; Automation Engineer"
-                   width="180" height="180">
-            </div>
-            <div class="profile-meta">
-              <div class="location">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                Kottayam, Kerala, India
-              </div>
-              <p>sidharthsajith005@gmail.com</p>
-              <div class="social-links">
-                <a href="https://github.com/siddoit" target="_blank" rel="noopener" class="social-link" aria-label="GitHub">
-                  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12"/></svg>
-                  GitHub
-                </a>
-                <a href="https://www.linkedin.com/in/sidharthsajith/" target="_blank" rel="noopener" class="social-link" aria-label="LinkedIn">
-                  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-                  LinkedIn
-                </a>
-                <a href="mailto:sidharthsajith005@gmail.com" class="social-link" aria-label="Email">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-                  Email
-                </a>
-                <a href="cv.html" class="social-link" aria-label="CV">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-                  CV
-                </a>
-              </div>
-              <a href="assets/resume/Sidharth_Sajith_Resume.pdf" download="Sidharth_Sajith_Resume.pdf" target="_blank" rel="noopener" class="btn btn-primary" style="margin-top: 1rem; width: 100%; justify-content: center;">
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
-                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-                  <polyline points="7 10 12 15 17 10"/>
-                  <line x1="12" y1="15" x2="12" y2="3"/>
-                </svg>
-                Download Resume (PDF)
-              </a>
-            </div>
-          </div>
-        </aside>
-
-      </div>
     </div>
   </main>
 
