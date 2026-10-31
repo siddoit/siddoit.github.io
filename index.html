@@ -1,15 +1,55 @@
-﻿<!DOCTYPE html>
-<html lang="en" data-theme="light">
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sidharth Sajith — Robotics &amp; Automation Engineer</title>
   <meta name="description" content="Sidharth Sajith — Robotics & Automation Engineer specializing in AI, Computer Vision, and Embedded Systems. Based in Kerala, India.">
   <meta name="author" content="Sidharth Sajith">
-  <meta property="og:title" content="Sidharth Sajith">
-  <meta property="og:description" content="Robotics & Automation Engineer | AI & Embedded Systems">
+  <link rel="canonical" href="https://siddoit.github.io/">
+  <link rel="alternate" type="application/rss+xml" title="Sidharth Sajith — Blog" href="feed.xml">
+
+  <!-- OpenGraph Metadata -->
+  <meta property="og:title" content="Sidharth Sajith — Robotics &amp; Automation Engineer">
+  <meta property="og:description" content="Robotics & Automation Engineer | AI, Computer Vision & Embedded Systems">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://siddoit.github.io/portfolio/">
-  <title>Sidharth Sajith</title>
+  <meta property="og:url" content="https://siddoit.github.io/">
+  <meta property="og:image" content="https://siddoit.github.io/assets/images/pic2.jpeg">
+
+  <!-- Twitter Card Metadata -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Sidharth Sajith — Robotics &amp; Automation Engineer">
+  <meta name="twitter:description" content="Robotics & Automation Engineer | AI, Computer Vision & Embedded Systems">
+  <meta name="twitter:image" content="https://siddoit.github.io/assets/images/pic2.jpeg">
+
+  <!-- Schema.org JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Sidharth Sajith",
+    "url": "https://siddoit.github.io/",
+    "image": "https://siddoit.github.io/assets/images/pic2.jpeg",
+    "jobTitle": "Robotics & Automation Engineer",
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Saintgits College of Engineering"
+    },
+    "sameAs": [
+      "https://github.com/siddoit",
+      "https://www.linkedin.com/in/sidharthsajith/"
+    ]
+  }
+  </script>
+
+  <!-- Prevent Theme Flash (FOUC) -->
+  <script>
+    (function() {
+      var t = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', t);
+    })();
+  </script>
+
   <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,6 +57,9 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+  <!-- Accessible Skip to Content Link -->
+  <a href="#main" class="skip-link">Skip to main content</a>
 
   <!-- NAV -->
   <nav class="navbar">
@@ -38,7 +81,7 @@
   <div id="reading-progress"></div>
 
   <!-- MAIN -->
-  <main class="page-wrapper">
+  <main class="page-wrapper" id="main">
     <div class="container">
       <div class="home-layout fade-in">
 
@@ -69,7 +112,7 @@
           <!-- Quick stats -->
           <div class="quick-stats">
             <div class="stat-item">
-              <div class="num">6+</div>
+              <div class="num">8</div>
               <div class="label">Projects</div>
             </div>
             <div class="stat-item">
@@ -85,7 +128,22 @@
           <!-- Recent blog posts -->
           <div class="recent-posts">
             <h2>Recent Posts</h2>
-            <div id="recent-posts-list"></div>
+            <div id="recent-posts-list">
+            <!-- RECENT_POSTS_START -->
+    <a href="blog/embodied-asset-recall-robot.html" class="post-item">
+      <span class="post-date">Jul 18, 2026</span>
+      <span class="post-title">A Robot That Remembers Where You Left Your Wrench</span>
+    </a>
+    <a href="blog/automating-blog-with-agents.html" class="post-item">
+      <span class="post-date">Jul 17, 2026</span>
+      <span class="post-title">How I Accidentally Automated My Blog Posts</span>
+    </a>
+    <a href="blog/adas-heterogeneous-edge-pipeline.html" class="post-item">
+      <span class="post-date">Jul 10, 2026</span>
+      <span class="post-title">How a $400 Phone Learned to Drive</span>
+    </a>
+            <!-- RECENT_POSTS_END -->
+            </div>
           </div>
         </div>
 
@@ -93,9 +151,9 @@
         <aside>
           <div class="profile-card">
             <div class="profile-photo">
-              <img src="assets/images/profile-img.png"
+              <img src="assets/images/pic2.jpeg"
                    onerror="this.onerror=null; this.src='assets/icons/profile-placeholder.svg';"
-                   alt="Sidharth Sajith"
+                   alt="Sidharth Sajith - Robotics &amp; Automation Engineer"
                    width="180" height="180">
             </div>
             <div class="profile-meta">
@@ -122,6 +180,14 @@
                   CV
                 </a>
               </div>
+              <a href="assets/resume/Sidharth_Sajith_Resume.pdf" download="Sidharth_Sajith_Resume.pdf" target="_blank" rel="noopener" class="btn btn-primary" style="margin-top: 1rem; width: 100%; justify-content: center;">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                  <polyline points="7 10 12 15 17 10"/>
+                  <line x1="12" y1="15" x2="12" y2="3"/>
+                </svg>
+                Download Resume (PDF)
+              </a>
             </div>
           </div>
         </aside>
@@ -149,4 +215,3 @@
   <script src="script.js"></script>
 </body>
 </html>
-

@@ -1,11 +1,29 @@
 ﻿<!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
+  <script>
+    (function() {
+      const saved = localStorage.getItem('theme');
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const theme = saved ? saved : (prefersDark ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', theme);
+    })();
+  </script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="The messy, sweary, very real story of getting a YOLO26 traffic-light model to run on a rover â€” overclocks, VRAM wars, and a 20GB export tantrum.">
+  <meta name="description" content="The messy, sweary, very real story of getting a YOLO26 traffic-light model to run on a rover — overclocks, VRAM wars, and a 20GB export tantrum.">
   <meta name="author" content="Sidharth Sajith">
-  <title>We Nearly Nuked a GPU to Teach a Rover to Read Traffic Lights â€” Sidharth Sajith</title>
+  <title>We Nearly Nuked a GPU to Teach a Rover to Read Traffic Lights — Sidharth Sajith</title>
+  <link rel="canonical" href="https://siddoit.github.io/blog/rover-traffic-system.html">
+  <meta property="og:title" content="We Nearly Nuked a GPU to Teach a Rover to Read Traffic Lights — Sidharth Sajith">
+  <meta property="og:description" content="The messy, sweary, very real story of getting a YOLO26 traffic-light model to run on a rover — overclocks, VRAM wars, and a 20GB export tantrum.">
+  <meta property="og:image" content="https://siddoit.github.io/assets/images/pic2.jpeg">
+  <meta property="og:url" content="https://siddoit.github.io/blog/rover-traffic-system.html">
+  <meta property="og:type" content="article">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="We Nearly Nuked a GPU to Teach a Rover to Read Traffic Lights — Sidharth Sajith">
+  <meta name="twitter:description" content="The messy, sweary, very real story of getting a YOLO26 traffic-light model to run on a rover — overclocks, VRAM wars, and a 20GB export tantrum.">
+  <meta name="twitter:image" content="https://siddoit.github.io/assets/images/pic2.jpeg">
   <link rel="icon" type="image/svg+xml" href="../assets/icons/favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,6 +31,7 @@
   <link rel="stylesheet" href="../style.css">
 </head>
 <body>
+  <a href="#main" class="skip-link">Skip to main content</a>
 
   <nav class="navbar">
     <div class="container">
@@ -32,7 +51,7 @@
   </nav>
   <div id="reading-progress"></div>
 
-  <main class="page-wrapper">
+  <main class="page-wrapper" id="main">
     <div class="container">
 
       <a href="../blog.html" class="project-detail-back">
@@ -44,7 +63,7 @@
         <h1>We Nearly Nuked a GPU to Teach a Rover to Read Traffic Lights</h1>
         <div class="post-meta">
           <span>Published: April 15, 2026</span>
-          <span>Â·</span>
+          <span>·</span>
           <span>Training</span>
         </div>
       </header>
@@ -64,7 +83,7 @@
         <h2>First, the software had to go</h2>
         <p>
           First problem was the machine tripping over its own math engine. PyTorch and CUDA were not on
-          speaking terms. So we did the only reasonable thing â€” nuked the whole PyTorch stack and force-installed
+          speaking terms. So we did the only reasonable thing — nuked the whole PyTorch stack and force-installed
           the CUDA 12.1 build so the hardware could actually talk to itself. Nothing glamorous, just clearing
           out the junk that was quietly breaking everything.
         </p>
@@ -72,12 +91,12 @@
         <h2>Then the memory wars</h2>
         <p>
           Then came the VRAM reality check. "Illegal instruction" errors, memory overflows, the usual. We had to
-          babysit batch sizes to keep VRAM in a tight 5â€“7 GB pocket â€” too high and it bleeds into system RAM and
+          babysit batch sizes to keep VRAM in a tight 5â€“7 GB pocket — too high and it bleeds into system RAM and
           dies, too low and training crawls. Windows was also choking on background plotting, so we yanked all
           the visual plotting and locked down CPU workers to stop the GPU from panicking.
         </p>
         <p>
-          The funniest one: the rig was running a stupid overclock â€” +215 core, +415 mem â€” that was flipping
+          The funniest one: the rig was running a stupid overclock — +215 core, +415 mem — that was flipping
           bits and quietly destroying the compute graph. Dialed it back to a boring +25/+50 and suddenly the
           math stopped lying. Sometimes the fix is just "stop trying to be a hero."
         </p>
@@ -88,7 +107,7 @@
 
         <h2>Finally, the export boss fight</h2>
         <p>
-          Training was the easy part. Exporting tried to load all 4,000 validation images into RAM at once â€”
+          Training was the easy part. Exporting tried to load all 4,000 validation images into RAM at once —
           20 GB requested, system crashed. We wrote a small script to sample a 300-image calibration set and
           slipped past the bottleneck. Then the TensorFlow converter choked on a TopK node from a version
           mismatch, so we hardcoded ONNX Opset 13 and walked away with a clean TFLite.
@@ -100,7 +119,7 @@ Red light         98.6%
 Green light       95.9%</code></pre>
 
         <p>
-          So yeah â€” a "sniper of a model" at the end. But the real story is the wrangling: purges, overclocks
+          So yeah — a "sniper of a model" at the end. But the real story is the wrangling: purges, overclocks
           walked back, RAM tantrums, a hardcoded opset. That's what actually getting a model to run on edge
           hardware looks like. Not a notebook. A fight.
         </p>

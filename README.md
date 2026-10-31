@@ -1,33 +1,31 @@
 # Sidharth Sajith — Portfolio
 
-A minimal, modern **dark-themed** portfolio website for a **Robotics & Automation Engineer**. Built with pure HTML, CSS, and JavaScript — no frameworks, no build tools.
+A minimal, modern engineering portfolio website for a **Robotics & Automation Engineer** specializing in Embedded Systems, Edge AI, and Autonomous Systems. Built with vanilla HTML5, modern CSS3, and JavaScript — zero frameworks or heavy runtime dependencies.
 
-🔗 **[Live Demo](https://siddoit.github.io/portfolio/)**
+🔗 **[Live Website](https://siddoit.github.io/)**
 
 ---
 
 ## ✨ Features
 
-- **Single-page layout** — clean, distraction-free navigation
-- **Dark theme** — easy on the eyes with blue accent highlights
-- **Fully responsive** — adapts seamlessly from mobile to ultrawide
-- **Smooth scroll-triggered animations** — elements fade in as you scroll
-- **Sticky navbar** with active-section highlighting
-- **Mobile hamburger menu** with accessibility (Escape key, outside-click close)
-- **SEO-optimized** — semantic HTML, meta tags, Open Graph, structured data
-- **Zero frameworks** — pure HTML, CSS, JavaScript
-- **Fast load times** — no heavy dependencies
+- **Theme Toggle with Zero FOUC** — early execution script prevents dark/light mode flashing, respecting user preference and system settings (`prefers-color-scheme`).
+- **Idempotent Safe Build Pipeline** — `build.js` generates standard `sitemap.xml`, RSS `feed.xml`, and static blog previews while treating authored articles as immutable source material.
+- **Accessible & Responsive** — WCAG AA contrast compliance, keyboard focus rings (`:focus-visible`), skip links (`#main`), and mobile navigation scroll locking.
+- **Project Filter & Companion Stories** — interactive category filtering on projects, bidirectional cross-linking between deep-dive engineering projects and companion articles.
+- **Print & Performance Optimized** — clean print stylesheets for resumes and detail pages, system-font fallbacks, and zero layout-shift styling.
+- **SEO & Metadata Complete** — OpenGraph, Twitter Cards, Schema.org `Person` JSON-LD, standard XML sitemaps, and robots directives configured for `https://siddoit.github.io/`.
 
 ---
 
 ## 🛠️ Tech Stack
 
-| Layer     | Technology                          |
-| --------- | ----------------------------------- |
-| Structure | HTML5 (semantic)                    |
-| Styling   | CSS3 (custom properties, grid, flex)|
-| Logic     | Vanilla JavaScript (ES6+)           |
-| Fonts     | [Inter](https://fonts.google.com/specimen/Inter) via Google Fonts |
+| Layer       | Technology                                                        |
+| ----------- | ----------------------------------------------------------------- |
+| Structure   | Semantic HTML5                                                    |
+| Styling     | Modern CSS3 (Custom properties, CSS Grid, Flexbox, media queries) |
+| Logic       | Vanilla JavaScript (ES6+)                                         |
+| Build & SEO | Node.js generator (`build.js`) for Sitemaps, Feeds & Hydration    |
+| Typography  | [Inter](https://fonts.google.com/specimen/Inter) & [JetBrains Mono](https://fonts.google.com/specimen/JetBrains+Mono) |
 
 ---
 
@@ -35,28 +33,35 @@ A minimal, modern **dark-themed** portfolio website for a **Robotics & Automatio
 
 ```
 portfolio/
-├── index.html              # Main HTML page
-├── style.css               # All styles (variables, layout, components)
-├── script.js               # Interactivity (scroll, menu, animations, active nav)
-├── README.md               # This file
+├── index.html              # Homepage (Hero, About, Featured Projects, Recent Posts)
+├── projects.html           # Projects grid with category filters
+├── blog.html               # Blog listing page
+├── cv.html                 # Comprehensive curriculum vitae
+├── contact.html            # Contact form with honeypot protection & direct links
+├── style.css               # Shared CSS design system & responsive layout rules
+├── script.js               # Global UI interactivity (theme, menu, filters, copy buttons)
+├── build.js                # Build script for static blog previews, sitemap & RSS feed
+├── sitemap.xml             # Search engine sitemap
+├── feed.xml                # RSS 2.0 blog feed
+├── robots.txt              # Search crawler directives
+├── README.md               # Documentation
 │
-├── blog.html               # Blog index (cards render automatically)
 ├── blog/
-│   ├── post-template.html  # Copy this for each new post
-│   └── <slug>.html         # Individual post pages
-├── projects.html           # Projects grid
-└── projects/
-    └── <project>.html      # Individual project detail pages
+│   ├── post-template.html  # Standard template for authoring new posts
+│   └── <slug>.html         # Authored deep-dive technical articles
+├── projects/
+│   └── <project>.html      # Detailed project engineering pages
 │
 └── assets/
     ├── js/
-    │   ├── posts.js         # Blog post metadata (add an entry per post)
-    │   └── blog.js          # Renders blog cards from posts.js
+    │   ├── posts.js        # Blog metadata database
+    │   └── blog.js         # Client-side fallback renderer
     ├── icons/
-    │   ├── favicon.svg         # SS initials favicon
-    │   └── profile-placeholder.svg  # Circuit-style profile avatar
+    │   ├── favicon.svg     # Initials favicon
+    │   └── profile-placeholder.svg
     ├── images/
-    │   └── (optional profile.jpg / project thumbnails)
+    │   ├── pic1.jpeg       # High-contrast portrait
+    │   └── pic2.jpeg       # Primary portfolio portrait (natural background)
     └── resume/
         └── Sidharth_Sajith_Resume.pdf  # Canonical resume PDF
 ```
@@ -65,41 +70,31 @@ portfolio/
 
 ## ✍️ Writing a Blog Post
 
-The blog is JSON-driven — you never hand-edit cards.
-
-1. Copy `blog/post-template.html` to `blog/<your-slug>.html` and write your content.
-2. Open `assets/js/posts.js` and add an entry:
+1. Copy `blog/post-template.html` to `blog/<your-slug>.html` and author your article.
+2. Add your post metadata to `assets/js/posts.js`:
    ```javascript
    {
      slug: "your-slug",
      title: "Your Post Title",
      date: "2026-07-20",
-     excerpt: "One-line summary.",
-     tags: ["Edge AI", "Jetson"]
+     excerpt: "One-line summary for cards and search feeds.",
+     tags: ["Edge AI", "Robotics"]
    }
    ```
-3. That's it. `blog.html` and the "Recent Posts" list on `index.html` update automatically.
-   Newest posts sort to the top. Posts are linked as `blog/<slug>.html`.
-
----
-
-## 🛠️ Adding a Project
-
-1. Copy an existing `projects/<project>.html` and fill in the content.
-2. Add a card to `projects.html` pointing to it.
-3. Give it a consistent footer: a `.project-footer` with GitHub/Demo links and tech tags.
+3. Run the safe build generator:
+   ```bash
+   node build.js
+   ```
+   This generates static card previews for `index.html` and `blog.html`, updates `sitemap.xml`, and regenerates `feed.xml` without touching your authored article files.
 
 ---
 
 ## 🚀 Local Development
 
-No build step needed — just open the file:
+No compiler or bundler required:
 
 ```bash
-# Option 1: Open directly
-open index.html
-
-# Option 2: Serve locally (recommended for fonts/assets)
+# Option 1: Serve locally (recommended for fonts and assets)
 npx serve .
 # or
 python -m http.server 8080
@@ -109,33 +104,16 @@ python -m http.server 8080
 
 ## 🌐 Deploy to GitHub Pages
 
-1. Create a repository named `portfolio` on GitHub
-2. Push your local files:
-   ```bash
-   git init && git add . && git commit -m 'Initial commit'
-   git remote add origin https://github.com/siddoit/portfolio.git
-   git push -u origin main
-   ```
-3. Go to Repo **Settings** → **Pages** → Source: `main` branch → **Save**
-4. Your site will be live at `https://siddoit.github.io/portfolio/`
+The repository `siddoit.github.io` automatically deploys directly to the root domain `https://siddoit.github.io/`:
 
----
-
-## 🎨 Customization
-
-- **Colors**: Edit CSS variables in `:root` in `style.css`
-- **Content**: Update text directly in `index.html`
-- **Projects**: Add/remove `.project-card` blocks in `projects.html`
-- **Resume**: Replace `assets/resume/Sidharth_Sajith_Resume.pdf`
-- **Profile photo**: Add `assets/images/profile.jpg` (or keep the placeholder SVG)
-- **Blog posts**: See "Writing a Blog Post" above
+```bash
+git add .
+git commit -m "Update portfolio"
+git push origin main
+```
 
 ---
 
 ## 📄 License
 
-MIT
-
-## 📬 Contact
-
-Sidharth Sajith — sidharthsajith005@gmail.com
+MIT &copy; Sidharth Sajith

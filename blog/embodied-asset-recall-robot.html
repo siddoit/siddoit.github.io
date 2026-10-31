@@ -1,11 +1,29 @@
 ﻿<!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
+  <script>
+    (function() {
+      const saved = localStorage.getItem('theme');
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const theme = saved ? saved : (prefersDark ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', theme);
+    })();
+  </script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="A final-year robot that finds your moved tools offline — no cloud, no LiDAR, no RFID, just a Jetson and some stubborn VLMs.">
   <meta name="author" content="Sidharth Sajith">
   <title>A Robot That Remembers Where You Left Your Wrench — Sidharth Sajith</title>
+  <link rel="canonical" href="https://siddoit.github.io/blog/embodied-asset-recall-robot.html">
+  <meta property="og:title" content="A Robot That Remembers Where You Left Your Wrench — Sidharth Sajith">
+  <meta property="og:description" content="A final-year robot that finds your moved tools offline — no cloud, no LiDAR, no RFID, just a Jetson and some stubborn VLMs.">
+  <meta property="og:image" content="https://siddoit.github.io/assets/images/pic2.jpeg">
+  <meta property="og:url" content="https://siddoit.github.io/blog/embodied-asset-recall-robot.html">
+  <meta property="og:type" content="article">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="A Robot That Remembers Where You Left Your Wrench — Sidharth Sajith">
+  <meta name="twitter:description" content="A final-year robot that finds your moved tools offline — no cloud, no LiDAR, no RFID, just a Jetson and some stubborn VLMs.">
+  <meta name="twitter:image" content="https://siddoit.github.io/assets/images/pic2.jpeg">
   <link rel="icon" type="image/svg+xml" href="../assets/icons/favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,6 +31,7 @@
   <link rel="stylesheet" href="../style.css">
 </head>
 <body>
+  <a href="#main" class="skip-link">Skip to main content</a>
 
   <nav class="navbar">
     <div class="container">
@@ -32,7 +51,7 @@
   </nav>
   <div id="reading-progress"></div>
 
-  <main class="page-wrapper">
+  <main class="page-wrapper" id="main">
     <div class="container">
 
       <a href="../blog.html" class="project-detail-back">
@@ -48,6 +67,15 @@
           <span>Robotics</span>
         </div>
       </header>
+
+      <div class="project-callout">
+        <span class="callout-icon" aria-hidden="true">🛠️</span>
+        <div class="callout-content">
+          <strong>Companion Project:</strong>
+          <span>Explore the physical robot build, VLM integration, and ROS2 navigation stack in the </span>
+          <a href="../projects/asset-recall.html">Autonomous Asset Recall Robot Project Detail &rarr;</a>
+        </div>
+      </div>
 
       <article class="post-body fade-in">
         <p class="lead">

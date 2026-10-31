@@ -1,11 +1,34 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="EduBot — an AI-powered educational robot on Raspberry Pi 5 with LLM, speech AI, and AWS Rekognition, built for bilingual English/Malayalam learning. Sidharth Sajith.">
-  <meta name="author" content="Sidharth Sajith">
   <title>EduBot — Interactive Educational Robot — Sidharth Sajith</title>
+  <meta name="description" content="EduBot — Interactive bilingual educational robot powered by Raspberry Pi 5, LLM speech AI, and AWS Rekognition. Sidharth Sajith.">
+  <meta name="author" content="Sidharth Sajith">
+  <link rel="canonical" href="https://siddoit.github.io/projects/edubot.html">
+
+  <!-- OpenGraph Metadata -->
+  <meta property="og:title" content="EduBot — Interactive Educational Robot — Sidharth Sajith">
+  <meta property="og:description" content="A Raspberry Pi 5 robot that talks, listens, and recognises students — with bilingual English and Malayalam learning workflows.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://siddoit.github.io/projects/edubot.html">
+  <meta property="og:image" content="https://siddoit.github.io/assets/images/pic2.jpeg">
+
+  <!-- Twitter Card Metadata -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="EduBot — Interactive Educational Robot — Sidharth Sajith">
+  <meta name="twitter:description" content="Bilingual educational robot powered by Raspberry Pi 5 and speech AI.">
+  <meta name="twitter:image" content="https://siddoit.github.io/assets/images/pic2.jpeg">
+
+  <!-- Prevent Theme Flash (FOUC) -->
+  <script>
+    (function() {
+      var t = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', t);
+    })();
+  </script>
+
   <link rel="icon" type="image/svg+xml" href="../assets/icons/favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,6 +36,9 @@
   <link rel="stylesheet" href="../style.css">
 </head>
 <body>
+
+  <!-- Accessible Skip to Content Link -->
+  <a href="#main" class="skip-link">Skip to main content</a>
 
   <nav class="navbar">
     <div class="container">
@@ -22,7 +48,7 @@
       </button>
       <div class="nav-links" id="nav-links">
         <a href="../index.html"    class="nav-link">About</a>
-        <a href="../projects.html" class="nav-link active">Projects</a>
+        <a href="../projects.html" class="nav-link">Projects</a>
         <a href="../blog.html"     class="nav-link">Blog</a>
         <a href="../cv.html"       class="nav-link">CV</a>
         <a href="../contact.html"  class="nav-link">Contact</a>
@@ -32,7 +58,7 @@
   </nav>
   <div id="reading-progress"></div>
 
-  <main class="project-detail">
+  <main class="page-wrapper project-detail" id="main">
     <div class="container">
 
       <div class="project-detail-header">
@@ -45,12 +71,22 @@
         <h1 class="project-detail-title">EduBot — Interactive Educational Robot</h1>
         <p class="project-detail-subtitle">A Raspberry Pi 5 robot that talks, listens, and recognises students — with bilingual English and Malayalam learning workflows.</p>
         <div class="project-detail-actions">
-          <a href="https://github.com/siddoit" target="_blank" rel="noopener" class="btn btn-primary">
+          <a href="https://github.com/siddoit/edubot" target="_blank" rel="noopener" class="btn btn-primary">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12"/></svg>
             View on GitHub
           </a>
         </div>
       </div>
+
+      <!-- Companion Engineering Story Cross-Link -->
+      <a href="../blog/edubot-albirr-architecture.html" class="companion-story-box">
+        <div class="companion-story-content">
+          <span class="companion-story-eyebrow">Engineering Deep Dive</span>
+          <span class="companion-story-title">Meet Albirr, the Robot That Remembers Your Face &rarr;</span>
+          <p class="companion-story-desc">A Raspberry Pi 5 robot that tracks who walks in, greets them in Malayalam, and talks back — without ever freezing up.</p>
+        </div>
+        <div class="companion-story-arrow" aria-hidden="true">&rarr;</div>
+      </a>
 
       <div class="project-detail-body">
 
@@ -93,7 +129,8 @@
         </section>
 
       </div>
-      </main>
+    </div>
+  </main>
 
   <footer class="footer">
     <div class="container">
@@ -108,5 +145,3 @@
   <script src="../script.js"></script>
 </body>
 </html>
-
-

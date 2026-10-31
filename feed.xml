@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Sidharth Sajith — Blog</title>
+    <link>https://siddoit.github.io/blog.html</link>
+    <description>Robotics & Automation Engineer — AI, Computer Vision, Embedded Systems</description>
+    <language>en</language>
+    <lastBuildDate>Sat, 31 Oct 2026 13:58:57 GMT</lastBuildDate>
+    <atom:link href="https://siddoit.github.io/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>A Robot That Remembers Where You Left Your Wrench</title>
+      <link>https://siddoit.github.io/blog/embodied-asset-recall-robot.html</link>
+      <guid isPermaLink="true">https://siddoit.github.io/blog/embodied-asset-recall-robot.html</guid>
+      <description>No cloud, no LiDAR, no RFID — just a Jetson, some VLMs, and a stubborn belief that robots should find your stuff offline.</description>
+      <pubDate>Sat, 18 Jul 2026 00:00:00 GMT</pubDate>
+      <category>Robotics</category>
+      <category>VLM</category>
+      <category>ROS 2</category>
+    </item>
+    <item>
+      <title>How I Accidentally Automated My Blog Posts</title>
+      <link>https://siddoit.github.io/blog/automating-blog-with-agents.html</link>
+      <guid isPermaLink="true">https://siddoit.github.io/blog/automating-blog-with-agents.html</guid>
+      <description>Discovering OpenCode, agentic multimodal AI, and a free open-weights model that turns my messy brain-dumps into posts worth publishing.</description>
+      <pubDate>Fri, 17 Jul 2026 00:00:00 GMT</pubDate>
+      <category>Agents</category>
+      <category>LLM</category>
+      <category>Tooling</category>
+    </item>
+    <item>
+      <title>How a $400 Phone Learned to Drive</title>
+      <link>https://siddoit.github.io/blog/adas-heterogeneous-edge-pipeline.html</link>
+      <guid isPermaLink="true">https://siddoit.github.io/blog/adas-heterogeneous-edge-pipeline.html</guid>
+      <description>A Snapdragon 8 Gen 2 has three brains. Splitting driving workloads across its GPU, NPU, and CPU is how a phone becomes a self-driving stack.</description>
+      <pubDate>Fri, 10 Jul 2026 00:00:00 GMT</pubDate>
+      <category>Edge AI</category>
+      <category>ADAS</category>
+      <category>Qualcomm AI Hub</category>
+    </item>
+    <item>
+      <title>Meet Albirr, the Robot That Remembers Your Face</title>
+      <link>https://siddoit.github.io/blog/edubot-albirr-architecture.html</link>
+      <guid isPermaLink="true">https://siddoit.github.io/blog/edubot-albirr-architecture.html</guid>
+      <description>A Raspberry Pi 5 robot that tracks who walks in, greets them in Malayalam, and talks back — without ever freezing up.</description>
+      <pubDate>Thu, 18 Jun 2026 00:00:00 GMT</pubDate>
+      <category>Raspberry Pi</category>
+      <category>LLM</category>
+      <category>Robotics</category>
+    </item>
+    <item>
+      <title>We Built a Robot That Yells at You for Slouching</title>
+      <link>https://siddoit.github.io/blog/stress-ai-posture-system.html</link>
+      <guid isPermaLink="true">https://siddoit.github.io/blog/stress-ai-posture-system.html</guid>
+      <description>An ESP32, a custom posture net, and an emotion CNN walk into a room. Then it starts buzzing and texting you about your life choices.</description>
+      <pubDate>Wed, 20 May 2026 00:00:00 GMT</pubDate>
+      <category>IoT</category>
+      <category>Computer Vision</category>
+      <category>ESP32</category>
+    </item>
+    <item>
+      <title>We Nearly Nuked a GPU to Teach a Rover to Read Traffic Lights</title>
+      <link>https://siddoit.github.io/blog/rover-traffic-system.html</link>
+      <guid isPermaLink="true">https://siddoit.github.io/blog/rover-traffic-system.html</guid>
+      <description>Overclocked into oblivion, drowning in VRAM, and a 20GB RAM tantrum — the unglamorous story of getting YOLO26 to actually run on a rover.</description>
+      <pubDate>Wed, 15 Apr 2026 00:00:00 GMT</pubDate>
+      <category>YOLO</category>
+      <category>Edge AI</category>
+      <category>Training</category>
+    </item>
+    <item>
+      <title>The Plant Doctor With a Bouncer at the Door</title>
+      <link>https://siddoit.github.io/blog/plant-disease-hybrid-ai-pipeline.html</link>
+      <guid isPermaLink="true">https://siddoit.github.io/blog/plant-disease-hybrid-ai-pipeline.html</guid>
+      <description>Why a disease-detection model calls your steering wheel &apos;mildew&apos; — and how a cloud guardrail, a fallback, and an ESP32 pump fix it.</description>
+      <pubDate>Thu, 12 Mar 2026 00:00:00 GMT</pubDate>
+      <category>Computer Vision</category>
+      <category>Flask</category>
+      <category>IoT</category>
+    </item>
+  </channel>
+</rss>

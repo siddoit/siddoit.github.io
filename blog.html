@@ -1,11 +1,35 @@
-﻿<!DOCTYPE html>
-<html lang="en" data-theme="light">
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Blog by Sidharth Sajith — progress, learnings, and thoughts on robotics, AI, and embedded systems.">
-  <meta name="author" content="Sidharth Sajith">
   <title>Blog — Sidharth Sajith</title>
+  <meta name="description" content="Engineering blog by Sidharth Sajith — technical deep-dives on robotics, ROS 2, edge AI, computer vision, and embedded systems.">
+  <meta name="author" content="Sidharth Sajith">
+  <link rel="canonical" href="https://siddoit.github.io/blog.html">
+  <link rel="alternate" type="application/rss+xml" title="Sidharth Sajith — Blog" href="feed.xml">
+
+  <!-- OpenGraph Metadata -->
+  <meta property="og:title" content="Blog — Sidharth Sajith">
+  <meta property="og:description" content="Technical deep-dives on robotics, edge AI, computer vision, and embedded systems.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://siddoit.github.io/blog.html">
+  <meta property="og:image" content="https://siddoit.github.io/assets/images/pic2.jpeg">
+
+  <!-- Twitter Card Metadata -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Blog — Sidharth Sajith">
+  <meta name="twitter:description" content="Technical deep-dives on robotics, edge AI, computer vision, and embedded systems.">
+  <meta name="twitter:image" content="https://siddoit.github.io/assets/images/pic2.jpeg">
+
+  <!-- Prevent Theme Flash (FOUC) -->
+  <script>
+    (function() {
+      var t = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', t);
+    })();
+  </script>
+
   <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,6 +38,10 @@
 </head>
 <body>
 
+  <!-- Accessible Skip to Content Link -->
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <!-- NAV -->
   <nav class="navbar">
     <div class="container">
       <a href="index.html" class="nav-brand">Sidharth Sajith</a>
@@ -32,7 +60,8 @@
   </nav>
   <div id="reading-progress"></div>
 
-  <main class="page-wrapper">
+  <!-- MAIN -->
+  <main class="page-wrapper" id="main">
     <div class="container">
 
       <header class="page-header fade-in">
@@ -41,11 +70,69 @@
       </header>
 
       <div class="blog-list fade-in" id="blog-list">
-        <!-- Posts render here automatically from assets/js/posts.js -->
+      <!-- BLOG_POSTS_START -->
+      <a href="blog/embodied-asset-recall-robot.html" class="blog-post-item">
+        <div class="blog-post-meta-row">
+          <span class="blog-date">Jul 18, 2026</span>
+          <span class="badge badge-blue">Robotics</span><span class="badge badge-blue">VLM</span><span class="badge badge-blue">ROS 2</span>
+        </div>
+        <div class="blog-post-title">A Robot That Remembers Where You Left Your Wrench</div>
+        <p class="blog-post-excerpt">No cloud, no LiDAR, no RFID — just a Jetson, some VLMs, and a stubborn belief that robots should find your stuff offline.</p>
+      </a>
+      <a href="blog/automating-blog-with-agents.html" class="blog-post-item">
+        <div class="blog-post-meta-row">
+          <span class="blog-date">Jul 17, 2026</span>
+          <span class="badge badge-blue">Agents</span><span class="badge badge-blue">LLM</span><span class="badge badge-blue">Tooling</span>
+        </div>
+        <div class="blog-post-title">How I Accidentally Automated My Blog Posts</div>
+        <p class="blog-post-excerpt">Discovering OpenCode, agentic multimodal AI, and a free open-weights model that turns my messy brain-dumps into posts worth publishing.</p>
+      </a>
+      <a href="blog/adas-heterogeneous-edge-pipeline.html" class="blog-post-item">
+        <div class="blog-post-meta-row">
+          <span class="blog-date">Jul 10, 2026</span>
+          <span class="badge badge-blue">Edge AI</span><span class="badge badge-blue">ADAS</span><span class="badge badge-blue">Qualcomm AI Hub</span>
+        </div>
+        <div class="blog-post-title">How a $400 Phone Learned to Drive</div>
+        <p class="blog-post-excerpt">A Snapdragon 8 Gen 2 has three brains. Splitting driving workloads across its GPU, NPU, and CPU is how a phone becomes a self-driving stack.</p>
+      </a>
+      <a href="blog/edubot-albirr-architecture.html" class="blog-post-item">
+        <div class="blog-post-meta-row">
+          <span class="blog-date">Jun 18, 2026</span>
+          <span class="badge badge-blue">Raspberry Pi</span><span class="badge badge-blue">LLM</span><span class="badge badge-blue">Robotics</span>
+        </div>
+        <div class="blog-post-title">Meet Albirr, the Robot That Remembers Your Face</div>
+        <p class="blog-post-excerpt">A Raspberry Pi 5 robot that tracks who walks in, greets them in Malayalam, and talks back — without ever freezing up.</p>
+      </a>
+      <a href="blog/stress-ai-posture-system.html" class="blog-post-item">
+        <div class="blog-post-meta-row">
+          <span class="blog-date">May 20, 2026</span>
+          <span class="badge badge-blue">IoT</span><span class="badge badge-blue">Computer Vision</span><span class="badge badge-blue">ESP32</span>
+        </div>
+        <div class="blog-post-title">We Built a Robot That Yells at You for Slouching</div>
+        <p class="blog-post-excerpt">An ESP32, a custom posture net, and an emotion CNN walk into a room. Then it starts buzzing and texting you about your life choices.</p>
+      </a>
+      <a href="blog/rover-traffic-system.html" class="blog-post-item">
+        <div class="blog-post-meta-row">
+          <span class="blog-date">Apr 15, 2026</span>
+          <span class="badge badge-blue">YOLO</span><span class="badge badge-blue">Edge AI</span><span class="badge badge-blue">Training</span>
+        </div>
+        <div class="blog-post-title">We Nearly Nuked a GPU to Teach a Rover to Read Traffic Lights</div>
+        <p class="blog-post-excerpt">Overclocked into oblivion, drowning in VRAM, and a 20GB RAM tantrum — the unglamorous story of getting YOLO26 to actually run on a rover.</p>
+      </a>
+      <a href="blog/plant-disease-hybrid-ai-pipeline.html" class="blog-post-item">
+        <div class="blog-post-meta-row">
+          <span class="blog-date">Mar 12, 2026</span>
+          <span class="badge badge-blue">Computer Vision</span><span class="badge badge-blue">Flask</span><span class="badge badge-blue">IoT</span>
+        </div>
+        <div class="blog-post-title">The Plant Doctor With a Bouncer at the Door</div>
+        <p class="blog-post-excerpt">Why a disease-detection model calls your steering wheel &apos;mildew&apos; — and how a cloud guardrail, a fallback, and an ESP32 pump fix it.</p>
+      </a>
+      <!-- BLOG_POSTS_END -->
       </div>
     </div>
   </main>
 
+  <!-- FOOTER -->
   <footer class="footer">
     <div class="container">
       <p class="footer-copy">
@@ -64,4 +151,3 @@
   <script src="script.js"></script>
 </body>
 </html>
-

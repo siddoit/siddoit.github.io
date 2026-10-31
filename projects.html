@@ -1,11 +1,35 @@
-﻿<!DOCTYPE html>
-<html lang="en" data-theme="light">
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Projects by Sidharth Sajith — Robotics, AI, Computer Vision, and Embedded Systems.">
-  <meta name="author" content="Sidharth Sajith">
   <title>Projects — Sidharth Sajith</title>
+  <meta name="description" content="Projects by Sidharth Sajith — Robotics, Autonomous Systems, Edge AI, Computer Vision, and Embedded Hardware.">
+  <meta name="author" content="Sidharth Sajith">
+  <link rel="canonical" href="https://siddoit.github.io/projects.html">
+  <link rel="alternate" type="application/rss+xml" title="Sidharth Sajith — Blog" href="feed.xml">
+
+  <!-- OpenGraph Metadata -->
+  <meta property="og:title" content="Projects — Sidharth Sajith">
+  <meta property="og:description" content="A selection of robotics platforms, AI tools, and embedded hardware built by Sidharth Sajith.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://siddoit.github.io/projects.html">
+  <meta property="og:image" content="https://siddoit.github.io/assets/images/pic2.jpeg">
+
+  <!-- Twitter Card Metadata -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Projects — Sidharth Sajith">
+  <meta name="twitter:description" content="Robotics platforms, AI tools, and embedded hardware.">
+  <meta name="twitter:image" content="https://siddoit.github.io/assets/images/pic2.jpeg">
+
+  <!-- Prevent Theme Flash (FOUC) -->
+  <script>
+    (function() {
+      var t = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', t);
+    })();
+  </script>
+
   <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,6 +37,9 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+  <!-- Accessible Skip to Content Link -->
+  <a href="#main" class="skip-link">Skip to main content</a>
 
   <!-- NAV -->
   <nav class="navbar">
@@ -34,18 +61,26 @@
   <div id="reading-progress"></div>
 
   <!-- MAIN -->
-  <main class="page-wrapper">
+  <main class="page-wrapper" id="main">
     <div class="container">
 
       <header class="page-header fade-in">
         <h1>Projects</h1>
-        <p>A selection of things I've built — autonomous systems, AI tools, and embedded hardware.</p>
+        <p>A selection of things I've built — autonomous systems, edge AI pipelines, and embedded hardware.</p>
       </header>
+
+      <!-- Category Filter Pills -->
+      <div class="project-filters fade-in" aria-label="Filter projects by category">
+        <button class="filter-btn active" data-filter="all">All Projects</button>
+        <button class="filter-btn" data-filter="robotics">Robotics &amp; Edge AI</button>
+        <button class="filter-btn" data-filter="iot">IoT &amp; Embedded</button>
+        <button class="filter-btn" data-filter="ai">AI &amp; Computer Vision</button>
+      </div>
 
       <div class="projects-grid fade-in">
 
         <!-- Project 1: ADAS -->
-        <a href="projects/adas.html" class="project-card">
+        <a href="projects/adas.html" class="project-card" data-category="robotics edge-ai ai">
           <div class="project-card-header">
             <div class="project-card-icon">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
@@ -70,7 +105,7 @@
         </a>
 
         <!-- Project 2: Embodied Semantic Asset Recall -->
-        <a href="projects/asset-recall.html" class="project-card">
+        <a href="projects/asset-recall.html" class="project-card" data-category="robotics edge-ai ai">
           <div class="project-card-header">
             <div class="project-card-icon">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
@@ -95,7 +130,7 @@
         </a>
 
         <!-- Project 3: EduBot -->
-        <a href="projects/edubot.html" class="project-card">
+        <a href="projects/edubot.html" class="project-card" data-category="robotics ai">
           <div class="project-card-header">
             <div class="project-card-icon">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
@@ -119,8 +154,8 @@
           </div>
         </a>
 
-        <!-- Project 2: Aries Radar -->
-        <a href="projects/aries-radar.html" class="project-card">
+        <!-- Project 4: Aries Radar -->
+        <a href="projects/aries-radar.html" class="project-card" data-category="ai">
           <div class="project-card-header">
             <div class="project-card-icon">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
@@ -143,8 +178,8 @@
           </div>
         </a>
 
-        <!-- Project 3: IoT Sensor Network -->
-        <a href="projects/sensor-network.html" class="project-card">
+        <!-- Project 5: IoT Sensor Network -->
+        <a href="projects/sensor-network.html" class="project-card" data-category="iot embedded">
           <div class="project-card-header">
             <div class="project-card-icon">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
@@ -161,7 +196,7 @@
           </div>
           <div>
             <h3>6-Node Distributed Sensor Network</h3>
-            <span class="badge badge-blue">IoT</span>
+            <span class="badge badge-green">Aug 2025</span>
           </div>
           <p>Scalable campus-wide environmental monitoring system. NodeMCU ESP32S nodes transmit AHT10, HL83, and SDS011 sensor data via MQTT. Validated against real-time Open-Meteo and OGD India APIs.</p>
           <div class="project-tags">
@@ -172,8 +207,8 @@
           </div>
         </a>
 
-        <!-- Project 4: Smart Medicine Dispenser -->
-        <a href="projects/medicine-dispenser.html" class="project-card">
+        <!-- Project 6: Smart Medicine Dispenser -->
+        <a href="projects/medicine-dispenser.html" class="project-card" data-category="iot embedded">
           <div class="project-card-header">
             <div class="project-card-icon">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
@@ -196,8 +231,8 @@
           </div>
         </a>
 
-        <!-- Project 5: NeuraHome -->
-        <a href="projects/neurahome.html" class="project-card">
+        <!-- Project 7: NeuraHome -->
+        <a href="projects/neurahome.html" class="project-card" data-category="iot ai embedded">
           <div class="project-card-header">
             <div class="project-card-icon">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
@@ -221,8 +256,8 @@
           </div>
         </a>
 
-        <!-- Project 6: Intelligent Doc Automation -->
-        <a href="projects/doc-automation.html" class="project-card">
+        <!-- Project 8: Intelligent Doc Automation -->
+        <a href="projects/doc-automation.html" class="project-card" data-category="ai">
           <div class="project-card-header">
             <div class="project-card-icon">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
@@ -236,7 +271,7 @@
           </div>
           <div>
             <h3>Intelligent Document Automation</h3>
-            <span class="badge badge-blue">AI</span>
+            <span class="badge badge-green">Innovizta</span>
           </div>
           <p>Hybrid supply-chain tool using YOLOv8 and Gemini API to perform 3-way matching of PO, Delivery, and Invoice documents. Optimizes verification for scanned documents with LLM reasoning.</p>
           <div class="project-tags">
@@ -267,4 +302,3 @@
   <script src="script.js"></script>
 </body>
 </html>
-

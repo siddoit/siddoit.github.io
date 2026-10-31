@@ -1,11 +1,34 @@
-﻿<!DOCTYPE html>
-<html lang="en" data-theme="light">
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Contact Sidharth Sajith — reach out for collaborations, research opportunities, or just to say hi.">
-  <meta name="author" content="Sidharth Sajith">
   <title>Contact — Sidharth Sajith</title>
+  <meta name="description" content="Contact Sidharth Sajith — reach out for robotics engineering collaborations, research opportunities, or technical inquiries.">
+  <meta name="author" content="Sidharth Sajith">
+  <link rel="canonical" href="https://siddoit.github.io/contact.html">
+
+  <!-- OpenGraph Metadata -->
+  <meta property="og:title" content="Contact — Sidharth Sajith">
+  <meta property="og:description" content="Open to collaborations, research opportunities, and technical conversations in robotics and AI.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://siddoit.github.io/contact.html">
+  <meta property="og:image" content="https://siddoit.github.io/assets/images/pic2.jpeg">
+
+  <!-- Twitter Card Metadata -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Contact — Sidharth Sajith">
+  <meta name="twitter:description" content="Get in touch with Sidharth Sajith — Robotics & Automation Engineer.">
+  <meta name="twitter:image" content="https://siddoit.github.io/assets/images/pic2.jpeg">
+
+  <!-- Prevent Theme Flash (FOUC) -->
+  <script>
+    (function() {
+      var t = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', t);
+    })();
+  </script>
+
   <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,6 +36,9 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+  <!-- Accessible Skip to Content Link -->
+  <a href="#main" class="skip-link">Skip to main content</a>
 
   <nav class="navbar">
     <div class="container">
@@ -32,12 +58,12 @@
   </nav>
   <div id="reading-progress"></div>
 
-  <main class="page-wrapper">
+  <main class="page-wrapper" id="main">
     <div class="container">
 
       <header class="page-header fade-in">
         <h1>Get In Touch</h1>
-        <p>Open to collaborations, research opportunities, and interesting conversations.</p>
+        <p>Open to collaborations, research opportunities, and interesting technical conversations.</p>
       </header>
 
       <div class="contact-layout fade-in">
@@ -50,6 +76,8 @@
             action="https://formspree.io/f/mjgqoead"
             method="POST"
           >
+            <!-- Honeypot spam protection -->
+            <input type="checkbox" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
             <div class="form-group">
               <label for="name">Name</label>
               <input type="text" id="name" name="name" placeholder="Your name" required autocomplete="name">
@@ -75,9 +103,10 @@
             </button>
           </form>
 
-          <div class="form-success" id="form-success">
+          <div class="form-success" id="form-success" role="status">
             Message sent successfully. I'll get back to you as soon as possible.
           </div>
+          <div class="form-error" id="form-error" role="alert"></div>
         </div>
 
         <!-- Sidebar contact info -->
@@ -129,6 +158,7 @@
       <div class="footer-links">
         <a href="https://github.com/siddoit" target="_blank" rel="noopener">GitHub</a>
         <a href="https://www.linkedin.com/in/sidharthsajith/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="contact.html">Contact</a>
       </div>
     </div>
   </footer>
@@ -136,4 +166,3 @@
   <script src="script.js"></script>
 </body>
 </html>
-
