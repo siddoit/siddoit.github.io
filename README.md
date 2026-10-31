@@ -2,11 +2,11 @@
 
 A minimal, modern engineering portfolio website for a **Robotics & Automation Engineer** specializing in Embedded Systems, Edge AI, and Autonomous Systems. Built with vanilla HTML5, modern CSS3, and JavaScript — zero frameworks or heavy runtime dependencies.
 
-🔗 **[Live Website](https://siddoit.github.io/)**
+**[Live Website](https://siddoit.github.io/)**
 
 ---
 
-## ✨ Features
+## Features
 
 - **Theme Toggle with Zero FOUC** — early execution script prevents dark/light mode flashing, respecting user preference and system settings (`prefers-color-scheme`).
 - **Idempotent Safe Build Pipeline** — `build.js` generates standard `sitemap.xml`, RSS `feed.xml`, and static blog previews while treating authored articles as immutable source material.
@@ -17,7 +17,7 @@ A minimal, modern engineering portfolio website for a **Robotics & Automation En
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 | Layer       | Technology                                                        |
 | ----------- | ----------------------------------------------------------------- |
@@ -29,7 +29,7 @@ A minimal, modern engineering portfolio website for a **Robotics & Automation En
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 portfolio/
@@ -68,7 +68,7 @@ portfolio/
 
 ---
 
-## ✍️ Writing a Blog Post
+## Writing a Blog Post
 
 1. Copy `blog/post-template.html` to `blog/<your-slug>.html` and author your article.
 2. Add your post metadata to `assets/js/posts.js`:
@@ -89,7 +89,7 @@ portfolio/
 
 ---
 
-## 🚀 Local Development
+## Local Development
 
 No compiler or bundler required:
 
@@ -102,7 +102,7 @@ python -m http.server 8080
 
 ---
 
-## 🌐 Deploy to GitHub Pages
+## Deploy to GitHub Pages
 
 The repository `siddoit.github.io` automatically deploys directly to the root domain `https://siddoit.github.io/`:
 
@@ -114,6 +114,6 @@ git push origin main
 
 ---
 
-## 📄 License
+## License
 
 MIT &copy; Sidharth Sajith

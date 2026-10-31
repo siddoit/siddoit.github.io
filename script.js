@@ -80,6 +80,13 @@ navLinks?.querySelectorAll('.nav-link').forEach(link => {
   });
 });
 
+// Reset mobile nav state on window resize beyond mobile breakpoint
+window.addEventListener('resize', () => {
+  if (window.innerWidth > 768 && navLinks?.classList.contains('open')) {
+    setMobileNav(false);
+  }
+});
+
 // ─── Active Nav Link Highlighting ─────────────────────────────────────────────
 (function () {
   const full = window.location.pathname;
@@ -150,13 +157,30 @@ const projectCards  = document.querySelectorAll('.projects-grid .project-card');
 if (filterButtons.length > 0 && projectCards.length > 0) {
   filterButtons.forEach(btn => {
     btn.addEventListener('click', () => {
-      filterButtons.forEach(b => b.classList.remove('active'));
+      filterButtons.forEach(b => {
+        b.classList.remove('active');
+        b.setAttribute('aria-pressed', 'false');
+      });
       btn.classList.add('active');
-      const filter = btn.getAttribute('data-filter') || 'all';
+      btn.setAttribute('aria-pressed', 'true');
+      const filter = (btn.getAttribute('data-filter') || 'all').toLowerCase();
 
       projectCards.forEach(card => {
         const categories = (card.getAttribute('data-category') || '').toLowerCase();
-        if (filter === 'all' || categories.includes(filter.toLowerCase())) {
+        let matches = false;
+        if (filter === 'all') {
+          matches = true;
+        } else if (filter === 'robotics') {
+          matches = categories.includes('robotics');
+        } else if (filter === 'iot') {
+          matches = categories.includes('iot') || categories.includes('embedded');
+        } else if (filter === 'ai') {
+          matches = categories.split(/\s+/).includes('ai') || categories.includes('computer vision') || categories.includes('edge-ai');
+        } else {
+          matches = categories.includes(filter);
+        }
+
+        if (matches) {
           card.style.display = 'flex';
         } else {
           card.style.display = 'none';

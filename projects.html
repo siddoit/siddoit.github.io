@@ -71,13 +71,13 @@
 
       <!-- Category Filter Pills -->
       <div class="project-filters fade-in" aria-label="Filter projects by category">
-        <button class="filter-btn active" data-filter="all">All Projects</button>
-        <button class="filter-btn" data-filter="robotics">Robotics &amp; Edge AI</button>
-        <button class="filter-btn" data-filter="iot">IoT &amp; Embedded</button>
-        <button class="filter-btn" data-filter="ai">AI &amp; Computer Vision</button>
+        <button class="filter-btn active" data-filter="all" aria-pressed="true">All Projects</button>
+        <button class="filter-btn" data-filter="robotics" aria-pressed="false">Robotics &amp; Edge AI</button>
+        <button class="filter-btn" data-filter="iot" aria-pressed="false">IoT &amp; Embedded</button>
+        <button class="filter-btn" data-filter="ai" aria-pressed="false">AI &amp; Computer Vision</button>
       </div>
 
-      <div class="projects-grid fade-in">
+      <div class="projects-grid fade-in" id="projects-grid">
 
         <!-- Project 1: ADAS -->
         <a href="projects/adas.html" class="project-card" data-category="robotics edge-ai ai">
@@ -91,7 +91,7 @@
               <path d="M7 17L17 7M17 7H7M17 7v10"/>
             </svg>
           </div>
-          <div>
+          <div class="project-card-title-group">
             <h3>Autonomous Vehicle Research Platform</h3>
             <span class="badge badge-orange">Ongoing</span>
           </div>
@@ -116,7 +116,7 @@
               <path d="M7 17L17 7M17 7H7M17 7v10"/>
             </svg>
           </div>
-          <div>
+          <div class="project-card-title-group">
             <h3>Embodied Semantic Asset Recall Robot</h3>
             <span class="badge badge-orange">Ongoing</span>
           </div>
@@ -141,7 +141,7 @@
               <path d="M7 17L17 7M17 7H7M17 7v10"/>
             </svg>
           </div>
-          <div>
+          <div class="project-card-title-group">
             <h3>EduBot — Interactive Educational Robot</h3>
             <span class="badge badge-green">Jun 2026</span>
           </div>
@@ -166,7 +166,7 @@
               <path d="M7 17L17 7M17 7H7M17 7v10"/>
             </svg>
           </div>
-          <div>
+          <div class="project-card-title-group">
             <h3>Aries Radar System</h3>
             <span class="badge badge-green">Apr 2025</span>
           </div>
@@ -194,7 +194,7 @@
               <path d="M7 17L17 7M17 7H7M17 7v10"/>
             </svg>
           </div>
-          <div>
+          <div class="project-card-title-group">
             <h3>6-Node Distributed Sensor Network</h3>
             <span class="badge badge-green">Aug 2025</span>
           </div>
@@ -219,7 +219,7 @@
               <path d="M7 17L17 7M17 7H7M17 7v10"/>
             </svg>
           </div>
-          <div>
+          <div class="project-card-title-group">
             <h3>IoT Smart Medicine Dispenser</h3>
             <span class="badge badge-green">Mar 2025</span>
           </div>
@@ -243,7 +243,7 @@
               <path d="M7 17L17 7M17 7H7M17 7v10"/>
             </svg>
           </div>
-          <div>
+          <div class="project-card-title-group">
             <h3>NeuraHome — LLM Smart Home</h3>
             <span class="badge badge-green">Feb 2025</span>
           </div>
@@ -269,7 +269,7 @@
               <path d="M7 17L17 7M17 7H7M17 7v10"/>
             </svg>
           </div>
-          <div>
+          <div class="project-card-title-group">
             <h3>Intelligent Document Automation</h3>
             <span class="badge badge-green">Innovizta</span>
           </div>
