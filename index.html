@@ -33,18 +33,61 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Sidharth Sajith",
-    "url": "https://siddoit.github.io/",
-    "image": "https://siddoit.github.io/assets/images/pic2.jpeg",
-    "jobTitle": "Robotics & Automation Engineer",
-    "worksFor": {
-      "@type": "Organization",
-      "name": "Saintgits College of Engineering"
-    },
-    "sameAs": [
-      "https://github.com/siddoit",
-      "https://www.linkedin.com/in/sidharthsajith/"
+    "@graph": [
+      {
+        "@type": "Person",
+        "@id": "https://siddoit.github.io/#person",
+        "name": "Sidharth Sajith",
+        "alternateName": ["Sid", "siddoit"],
+        "url": "https://siddoit.github.io/",
+        "image": "https://siddoit.github.io/assets/images/pic2.jpeg",
+        "jobTitle": "Robotics & Automation Engineer",
+        "description": "Robotics and Automation Engineer specializing in Computer Vision, Edge AI, ROS 2, and Embedded Systems.",
+        "worksFor": {
+          "@type": "Organization",
+          "name": "Zitto Motors"
+        },
+        "alumniOf": {
+          "@type": "EducationalOrganization",
+          "name": "Saintgits College of Engineering (Autonomous)",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Kottayam",
+            "addressRegion": "Kerala",
+            "addressCountry": "India"
+          }
+        },
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Kottayam",
+          "addressRegion": "Kerala",
+          "addressCountry": "India"
+        },
+        "knowsAbout": [
+          "Robotics",
+          "Automation Engineering",
+          "Computer Vision",
+          "Edge AI",
+          "Robot Operating System (ROS 2)",
+          "Embedded Systems",
+          "Autonomous Vehicles",
+          "Sensor Networks"
+        ],
+        "sameAs": [
+          "https://github.com/siddoit",
+          "https://www.linkedin.com/in/sidharthsajith/"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://siddoit.github.io/#website",
+        "url": "https://siddoit.github.io/",
+        "name": "Sidharth Sajith — Portfolio",
+        "description": "Official personal portfolio and technical writings of Sidharth Sajith, Robotics & Automation Engineer.",
+        "publisher": {
+          "@id": "https://siddoit.github.io/#person"
+        }
+      }
     ]
   }
   </script>
