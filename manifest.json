@@ -1,0 +1,16 @@
+{
+  "name": "Sidharth Sajith — Robotics & Automation Engineer",
+  "short_name": "Sidharth Sajith",
+  "description": "Portfolio of Sidharth Sajith — Robotics & Automation Engineer specializing in ROS 2, Computer Vision, Edge AI, and Embedded Systems.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a0a0c",
+  "theme_color": "#0a0a0c",
+  "icons": [
+    {
+      "src": "assets/icons/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}
